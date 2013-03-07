@@ -24,6 +24,6 @@ A few guidelines as we work on this project:
 -   Use GitHub's issues tracker to record bugs and possible features (like
     a combination bug tracker and TODO)
 
--   Do not `git push -f`
+-   Do not ``git push -f``
 
 -   Try to maintain a uniform coding style
