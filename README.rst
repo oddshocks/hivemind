@@ -16,6 +16,8 @@ Authors
 
 -   Duy Nguyen <dqn8613 at rit dot edu>
 
+-   Marc Brigham <mpb8676 at rit dot edu>
+
 Hacking
 -------
 
