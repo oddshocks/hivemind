@@ -21,11 +21,14 @@ Authors
 Hacking
 -------
 
-A few guidelines as we work on this project:
+Contributions will be rejected until the completion of the course.
+This must be our own work for now.
 
--   Use GitHub's issues tracker to record bugs and possible features (like
-    a combination bug tracker and TODO)
+Marc, Duy, and I (oddshocks) all have commit access to the
+oddshocks/hivemind repo on GitHub.
 
--   Do not ``git push -f``
+Operation
+---------
 
--   Try to maintain a uniform coding style
+This section will be used to contain ideas related to the design of the
+actual notetaking/sharing functionality of the application.
