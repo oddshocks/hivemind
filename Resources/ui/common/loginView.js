@@ -23,7 +23,6 @@ activity.onCreateOptionsMenu = function(e){
     loggedIn = false;
     // In Android 3.0 and above we need to call invalidateOptionsMenu() for menu changes at runtime
     win.activity.invalidateOptionsMenu();
-    
   });
 };
 
