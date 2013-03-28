@@ -4,6 +4,8 @@ function ApplicationWindow() {
 		DetailView = require('ui/common/DetailView');
 		loginView = require('ui/common/loginView');
 	var Cloud = ('ti.cloud')	;
+
+	var idexists = get.sessionId();
 		
 	//create object instance
 	var self = Ti.UI.createWindow({
@@ -15,14 +17,16 @@ function ApplicationWindow() {
 
 
 	if (){
-		
-	}	
-	//construct UI
-	var loginView = new loginView();
-	self.add(loginView);
 
-	//add behavior for master view
-	masterView.addEventListener('itemSelected', function(e) {
+	}
+
+	function	
+		//construct UI
+		var loginView = new loginView();
+		self.add(loginView);
+
+		//add behavior for master view
+		masterView.addEventListener('itemSelected', function(e) {
 		//create detail view container
 		var detailView = new DetailView();
 		var detailContainerWindow = Ti.UI.createWindow({

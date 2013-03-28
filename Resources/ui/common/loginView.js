@@ -16,6 +16,7 @@ activity.onCreateOptionsMenu = function(e){
     // In Android 3.0 and above we need to call invalidateOptionsMenu() for menu changes at runtime
     win.activity.invalidateOptionsMenu();
   });
+  
   var signup = menu.add({ title: "Sign up", itemId: signUp });
   logout.setIcon("logout.png");
   logout.addEventListener("click", function(e) {
