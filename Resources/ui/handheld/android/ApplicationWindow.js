@@ -3,6 +3,7 @@ function ApplicationWindow() {
 	var MasterView = require('ui/common/MasterView'),
 		DetailView = require('ui/common/DetailView');
 		loginView = require('ui/common/loginView');
+	var Cloud = ('ti.cloud')	;
 		
 	//create object instance
 	var self = Ti.UI.createWindow({
@@ -11,10 +12,14 @@ function ApplicationWindow() {
 		navBarHidden:false,
 		backgroundColor:'#ffffff'
 	});
+
+
+	if (){
 		
+	}	
 	//construct UI
-	var masterView = new MasterView();
-	self.add(masterView);
+	var loginView = new loginView();
+	self.add(loginView);
 
 	//add behavior for master view
 	masterView.addEventListener('itemSelected', function(e) {

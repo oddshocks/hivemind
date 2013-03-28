@@ -2,17 +2,17 @@
 function MasterView() {
 	//create object instance, parasitic subclass of Observable
 	var self = Ti.UI.createView({
-		backgroundColor:'white'
+		backgroundColor:'#000'
 	});
 	
 	//some dummy data for our table view
 	var tableData = [
-		{title:'Apples', price:'1.25', hasChild:true, color: '#000'},
-		{title:'Grapes', price:'1.50', hasChild:true, color: '#000'},
-		{title:'Oranges', price:'2.50', hasChild:true, color: '#000'},
-		{title:'Bananas', price:'1.50', hasChild:true, color: '#000'},
-		{title:'Pears', price:'1.40', hasChild:true, color: '#000'},
-		{title:'Kiwis', price:'1.00', hasChild:true, color: '#000'}
+		{title:'Apples', price:'1.25', hasChild:true, color: '#EEE'},
+		{title:'Grapes', price:'1.50', hasChild:true, color: '#EEE'},
+		{title:'Oranges', price:'2.50', hasChild:true, color: '#EEE'},
+		{title:'Bananas', price:'1.50', hasChild:true, color: '#EEE'},
+		{title:'Pears', price:'1.40', hasChild:true, color: '#EEE'},
+		{title:'Kiwis', price:'1.00', hasChild:true, color: '#EEE'}
 	];
 	
 	var table = Ti.UI.createTableView({
