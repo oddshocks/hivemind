@@ -1,4 +1,4 @@
-hivemind
+HiveMind
 ========
 
 Take and share notes in a unique way.
