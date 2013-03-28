@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="46cm" height="25cm" viewBox="-172 13 902 497" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffb5b5" x="-172" y="25" width="357.1" height="32"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-172" y="25" width="357.1" height="32"/>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="6.55" y="39">Users</text>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:normal" x="6.55" y="53">in SQLite database</text>
+    <rect style="fill: #ffb5b5" x="-172" y="57" width="357.1" height="148"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-172" y="57" width="357.1" height="148"/>
+    <polygon style="fill: #000000" points="-169,67 -167,70 -165,67 -167,64 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-163" y="73">id</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-83.7" y="73">integer, auto_increment</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-163" y1="74.6" x2="93.4" y2="74.6"/>
+    <ellipse style="fill: #000000" cx="-167" cy="83" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-163" y="89">nickname</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-83.7" y="89">string</text>
+    <ellipse style="fill: #000000" cx="-167" cy="99" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-163" y="105">email</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-83.7" y="105">string</text>
+    <ellipse style="fill: #000000" cx="-167" cy="115" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-163" y="121">password</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-83.7" y="121">(min. 8 character password hashed)</text>
+    <ellipse style="fill: #000000" cx="-167" cy="131" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-163" y="137">groups</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-83.7" y="137">list of group ids (foreign key)</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="-167" cy="147" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-163" y="153">firstname</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-83.7" y="153">string</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="-167" cy="163" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-163" y="169">lastname</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-83.7" y="169">string</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="-167" cy="179" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-163" y="185">bio</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-83.7" y="185">string (400 characters)</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="-167" cy="195" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-163" y="201">hives</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-83.7" y="201">list of hive ids (foreign key)</text>
+  </g>
+  <g>
+    <rect style="fill: #ffb5b5" x="-164" y="298" width="341.7" height="32"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-164" y="298" width="341.7" height="32"/>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="6.85" y="312">Groups</text>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:normal" x="6.85" y="326">in SQLite database</text>
+    <rect style="fill: #ffb5b5" x="-164" y="330" width="341.7" height="132"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-164" y="330" width="341.7" height="132"/>
+    <polygon style="fill: #000000" points="-161,340 -159,343 -157,340 -159,337 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-155" y="346">id</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-6.4" y="346">integer, auto_increment</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-155" y1="347.6" x2="170.7" y2="347.6"/>
+    <ellipse style="fill: #000000" cx="-159" cy="356" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-155" y="362">title</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-6.4" y="362">string</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="-159" cy="372" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-155" y="378">description</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-6.4" y="378">string (400 characters)</text>
+    <ellipse style="fill: #000000" cx="-159" cy="388" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-155" y="394">mod_ban_user</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-6.4" y="394">boolean</text>
+    <ellipse style="fill: #000000" cx="-159" cy="404" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-155" y="410">mod_edit_user</text>
+    <ellipse style="fill: #000000" cx="-159" cy="420" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-155" y="426">mod_delete_user</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-6.4" y="426">boolean</text>
+    <ellipse style="fill: #000000" cx="-159" cy="436" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-155" y="442">mod_view_all_hives</text>
+    <ellipse style="fill: #000000" cx="-159" cy="452" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-155" y="458">admin</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-6.4" y="458">boolean</text>
+  </g>
+  <g>
+    <rect style="fill: #ffb5b5" x="240" y="13" width="357.1" height="32"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="13" width="357.1" height="32"/>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="418.55" y="27">Hives</text>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:normal" x="418.55" y="41">in SQLite database</text>
+    <rect style="fill: #ffb5b5" x="240" y="45" width="357.1" height="100"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="45" width="357.1" height="100"/>
+    <polygon style="fill: #000000" points="243,55 245,58 247,55 245,52 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="249" y="61">id</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="359.1" y="61">integer, auto_increment</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="249" y1="62.6" x2="536.2" y2="62.6"/>
+    <ellipse style="fill: #000000" cx="245" cy="71" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="249" y="77">creation_date</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="359.1" y="77">date</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="245" cy="87" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="249" y="93">description</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="359.1" y="93">string (400 characters)</text>
+    <ellipse style="fill: #000000" cx="245" cy="103" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="249" y="109">users</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="359.1" y="109">list of user ids (foreign key)</text>
+    <ellipse style="fill: #000000" cx="245" cy="119" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="249" y="125">creator</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="359.1" y="125">user id (foreign key)</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="245" cy="135" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="249" y="141">moderators</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="359.1" y="141">list of user ids (foreign key)</text>
+  </g>
+  <g>
+    <rect style="fill: #aeffaf" x="323" y="188" width="357.1" height="32"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="323" y="188" width="357.1" height="32"/>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="501.55" y="202">Notes</text>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:normal" x="501.55" y="216">in MongoDB database</text>
+    <rect style="fill: #aeffaf" x="323" y="220" width="357.1" height="164"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="323" y="220" width="357.1" height="164"/>
+    <polygon style="fill: #000000" points="326,230 328,233 330,230 328,227 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="236">id</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="236">integer, auto_increment</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="332" y1="237.6" x2="619.2" y2="237.6"/>
+    <ellipse style="fill: #000000" cx="328" cy="246" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="252">creation_date</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="252">date</text>
+    <ellipse style="fill: #000000" cx="328" cy="262" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="268">edit_date</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="268">date</text>
+    <ellipse style="fill: #000000" cx="328" cy="278" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="284">creator</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="284">user id (foreign key)</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="328" cy="294" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="300">moderators</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="300">list of user ids (foreign key)</text>
+    <ellipse style="fill: #000000" cx="328" cy="310" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="316">viewers</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="316">list of user ids (foreign key)</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="328" cy="326" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="332">tags</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="332">list of tag ids (foreign key)</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="328" cy="342" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="348">links</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="348">list of linked note ids</text>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" cx="328" cy="358" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="364">format</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="364">string</text>
+    <ellipse style="fill: #000000" cx="328" cy="374" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="332" y="380">content</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="442.1" y="380">a text-based document</text>
+  </g>
+  <g>
+    <rect style="fill: #aeffaf" x="249" y="442" width="241.6" height="32"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="249" y="442" width="241.6" height="32"/>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="369.8" y="456">Tags</text>
+    <text font-size="11.2" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:italic;font-weight:normal" x="369.8" y="470">in MongoDB database</text>
+    <rect style="fill: #aeffaf" x="249" y="474" width="241.6" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="249" y="474" width="241.6" height="36"/>
+    <polygon style="fill: #000000" points="252,484 254,487 256,484 254,481 "/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="258" y="490">id</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="306.5" y="490">integer, auto_increment</text>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="258" y1="491.6" x2="483.6" y2="491.6"/>
+    <ellipse style="fill: #000000" cx="254" cy="500" rx="2" ry="2"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="258" y="506">title</text>
+    <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="306.5" y="506">string (60 characters)</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="6.55,205 6.55,251.5 6.85,251.5 6.85,288.264 "/>
+    <polygon style="fill: #000000" points="6.85,295.764 1.85,285.764 6.85,288.264 11.85,285.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="6.85,295.764 1.85,285.764 6.85,288.264 11.85,285.764 "/>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="12.55" y="225">n</text>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="12.85" y="292">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="501.55,384 501.55,413 369.8,413 369.8,432.264 "/>
+    <polygon style="fill: #000000" points="369.8,439.764 364.8,429.764 369.8,432.264 374.8,429.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="369.8,439.764 364.8,429.764 369.8,432.264 374.8,429.764 "/>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="507.55" y="404">n</text>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="375.8" y="436">m</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="418.55,145 418.55,166.5 412.275,166.5 412.275,178.264 "/>
+    <polygon style="fill: #000000" points="412.275,185.764 407.275,175.764 412.275,178.264 417.275,175.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="412.275,185.764 407.275,175.764 412.275,178.264 417.275,175.764 "/>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="424.55" y="165">1</text>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="418.275" y="182">n</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="185.1,115 212.55,115 212.55,87 230.264,87 "/>
+    <polygon style="fill: #000000" points="237.764,87 227.764,92 230.264,87 227.764,82 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="237.764,87 227.764,92 230.264,87 227.764,82 "/>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="191.1" y="109">n</text>
+    <text font-size="16" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="234" y="81">1</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="680.1,358 730,358 730,230 689.836,230 "/>
+    <polygon style="fill: #000000" points="682.336,230 692.336,225 689.836,230 692.336,235 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="682.336,230 692.336,225 689.836,230 692.336,235 "/>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="686.1" y="352">n</text>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="686.1" y="224">m</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="95.825,205 95.825,262 313.264,262 "/>
+    <polygon style="fill: #000000" points="320.764,262 310.764,267 313.264,262 310.764,257 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="320.764,262 310.764,267 313.264,262 310.764,257 "/>
+    <text font-size="16" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="101.825" y="225">n</text>
+    <text font-size="16" style="fill: #000000;text-anchor:end;font-family:monospace;font-style:normal;font-weight:normal" x="317" y="256">m</text>
+  </g>
+</svg>
