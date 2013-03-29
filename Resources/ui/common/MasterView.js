@@ -4,23 +4,6 @@ function MasterView() {
 	var self = Ti.UI.createView({
 		backgroundColor:'#000'
 	});
-	// activity.onCreateOptionsMenu = function(e){
- //  		var menu = e.menu;
- //  		var menuItem = menu.add();
- //  		menuItem.icon = "signIn.png";
- //  		menuItem.addEventListener("click", function(e) {
- //    		//Ti.API.debug("I was clicked");
- //    		var signInView = Ti.CreateView({
- //    			var userNameTextfield = Ti.UI.createTextField({
- //  				borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
- //  				color: '#336699',
- //  				top: 10, left: 10,
- //  				width: 250,
- //  				height: 60
-	// 		});
- //    		});
- //  	});
-	// };
 	
 	//some dummy data for our table view
 	var tableData = [

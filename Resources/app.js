@@ -10,27 +10,42 @@
 *  
 */
 
+// // use Kinvey cloudDB for our backend
+// Ti.include('kinvey-titanium-0.9.14.js');
+
+// Kinvey.init({
+//     'appKey': 'kid_PTZ8c5fM8M',
+//     'appSecret': 'e881cc20f68a426a8cfd00f22fa17192'
+// });
+
+// //for testing
+// Kinvey.ping({
+//   success: function(response) {
+//     alert('Kinvey Ping Success. Kinvey Service is alive, version: ' + response.version + ', response: ' + response.kinvey);
+//   },
+//   error: function(error) {
+//     alert('Kinvey Ping Failed. Response: ' + error.description);
+//   }
+// });
+
+var Cloud = require('ti.cloud');
+
+
 //bootstrap and check dependencies
 if (Ti.version < 1.8 ) {
-	alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');	  	
+	alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');
 }
-
-// This is a single context application with mutliple windows in a stack
-(function() {
-	//determine platform and form factor and render approproate components
-	var osname = Ti.Platform.osname,
-		version = Ti.Platform.version,
-		height = Ti.Platform.displayCaps.platformHeight,
-		width = Ti.Platform.displayCaps.platformWidth;
-	
-	//considering tablet to have one dimension over 900px - this is imperfect, so you should feel free to decide
-	//yourself what you consider a tablet form factor for android
-	var isTablet = osname === 'ipad' || (osname === 'android' && (width > 899 || height > 899));
-	
-	var Window;
-		if (osname === android){
-			Window = require('ui/handheld/android/ApplicationWindow');
-		}
-	}
-	new Window().open();
-})();
+// this sets the background color of the master UIView (when there are no windows/tab groups on it)  
+Titanium.UI.setBackgroundColor('#fff');  
+var tabGroup = Titanium.UI.createTabGroup();  
+var login = Titanium.UI.createWindow({  
+    title:'User Authentication Demo',  
+    tabBarHidden:true,  
+    url:'common/login.js'  
+});  
+var loginTab = Titanium.UI.createTab({  
+    title:"Login",  
+    window:login  
+});  
+tabGroup.addTab(loginTab);  
+tabGroup.open();
