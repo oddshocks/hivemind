@@ -4,29 +4,43 @@ function MasterView() {
 	var self = Ti.UI.createView({
 		backgroundColor:'#000'
 	});
-	
-	//some dummy data for our table view
-	var tableData = [
-		{title:'Take Notes', price:'1.25', hasChild:true, color: '#EEE'},
-		{title:'View Hive', price:'1.50', hasChild:true, color: '#EEE'},
-		{title:'Join Hive', price:'1.50', hasChild:true, color: '#EEE'},
-		{title:'Share Notes', price:'2.50', hasChild:true, color: '#EEE'}
-	];
-	
-	var table = Ti.UI.createTableView({
-		data:tableData
-	});
-	self.add(table);
-	
-	//add behavior
-	table.addEventListener('click', function(e) {
-		self.fireEvent('itemSelected', {
-			name:e.rowData.title,
-			price:e.rowData.price
-		});
-	});
-	
-	return self;
-};
 
-module.exports = MasterView;
+	var loginBtn = Titanium.UI.createButton({
+		title:'Login',
+		top:110,
+		width:90,
+		height:35,
+		borderRadius:1,
+		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
+	});
+	self.add(loginBtn);
+
+	var loginBtn = Titanium.UI.createButton({
+		title:'Login',
+		top:110,
+		width:90,
+		height:35,
+		borderRadius:1,
+		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
+	});
+	self.add(loginBtn);
+
+	var loginBtn = Titanium.UI.createButton({
+		title:'Login',
+		top:110,
+		width:90,
+		height:35,
+		borderRadius:1,
+		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
+	});
+	self.add(loginBtn);
+
+	var loginBtn = Titanium.UI.createButton({
+		title:'Login',
+		top:110,
+		width:90,
+		height:35,
+		borderRadius:1,
+		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
+	});
+	self.add(loginBtn);
