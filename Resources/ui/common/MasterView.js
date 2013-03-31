@@ -5,42 +5,26 @@ function MasterView() {
 		backgroundColor:'#000'
 	});
 
-	var loginBtn = Titanium.UI.createButton({
-		title:'Login',
-		top:110,
-		width:90,
-		height:35,
-		borderRadius:1,
-		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
+	var userAvatar = Titanium.UI.createImageView({
+		image:'',
+		width:100,
+		height:100,
+		top:20,
+		left:20
 	});
-	self.add(loginBtn);
+	win.add(userAvatar);
 
-	var loginBtn = Titanium.UI.createButton({
-		title:'Login',
-		top:110,
-		width:90,
-		height:35,
-		borderRadius:1,
-		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
+	var userName = Titanium.UI.createView({
+		text:'',
+		width:200,
+		height:18,
+		top:20,
 	});
-	self.add(loginBtn);
 
-	var loginBtn = Titanium.UI.createButton({
-		title:'Login',
-		top:110,
-		width:90,
-		height:35,
-		borderRadius:1,
-		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
+	var rows [];
+	var row;
+	var table = Ti.UI.createTableView({
+  		data: rows,
+  		backgroundColor: 'white'
 	});
-	self.add(loginBtn);
-
-	var loginBtn = Titanium.UI.createButton({
-		title:'Login',
-		top:110,
-		width:90,
-		height:35,
-		borderRadius:1,
-		font:{fontFamily:'Arial',fontWeight:'bold',fontSize:14}
-	});
-	self.add(loginBtn);
+	win.add(table);
