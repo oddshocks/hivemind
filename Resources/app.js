@@ -39,6 +39,6 @@ if (Ti.version < 1.8 ) {
 Titanium.UI.setBackgroundColor('#fff');    
 var login = Titanium.UI.createWindow({  
      
-    url:'common/login.js'  
+    url:'common/loginView.js'  
 });
 login.open();
