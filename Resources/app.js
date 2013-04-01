@@ -41,4 +41,4 @@ var login = Titanium.UI.createWindow({
      
     url:'common/login.js'  
 });
-win.open();
+login.open();
