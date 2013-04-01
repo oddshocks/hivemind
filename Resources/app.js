@@ -28,7 +28,7 @@
 //   }
 // });
 
-var Cloud = require('ti.cloud');
+//var Cloud = require('ti.cloud');
 
 
 //bootstrap and check dependencies
@@ -36,16 +36,9 @@ if (Ti.version < 1.8 ) {
 	alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');
 }
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)  
-Titanium.UI.setBackgroundColor('#fff');  
-var tabGroup = Titanium.UI.createTabGroup();  
+Titanium.UI.setBackgroundColor('#fff');    
 var login = Titanium.UI.createWindow({  
-    title:'User Authentication Demo',  
-    tabBarHidden:true,  
+     
     url:'common/login.js'  
-});  
-var loginTab = Titanium.UI.createTab({  
-    title:"Login",  
-    window:login  
-});  
-tabGroup.addTab(loginTab);  
-tabGroup.open();
+});
+win.open();
