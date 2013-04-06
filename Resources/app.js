@@ -35,10 +35,13 @@
 if (Ti.version < 1.8 ) {
 	alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');
 }
-// this sets the background color of the master UIView (when there are no windows/tab groups on it)  
-Titanium.UI.setBackgroundColor('#fff');    
-var login = Titanium.UI.createWindow({  
-     
-    url:'loginView.js'  
-});
-login.open();
+else{
+	
+	//Ti.include("handheld/android/ApplicationWindow.js");
+
+	var login = Ti.UI.createWindow({
+		backgroundColor: "#ffffc5",
+		url: "ui/common/loginView.js"
+	});
+	login.open();
+}

@@ -15,7 +15,7 @@ function MasterView() {
 	win.add(userAvatar);
 
 	var userName = Titanium.UI.createView({
-		text:'',
+		text:'USERNAME',
 		width:200,
 		height:18,
 		top:20,
