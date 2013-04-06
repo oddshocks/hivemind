@@ -1,20 +1,20 @@
-function ApplicationWindow() {
-	var Cloud = ('ti.cloud');
+// function ApplicationWindow() {
+// 	var Cloud = ('ti.cloud');
 
-	// //declare module dependencies
-	 var MasterView = require('ui/common/MasterView'),
-	 DetailView = require('ui/common/DetailView');
-	 loginView = require('ui/common/loginView');
+// 	// //declare module dependencies
+// 	 var MasterView = require('ui/common/MasterView'),
+// 	 DetailView = require('ui/common/DetailView');
+// 	 loginView = require('ui/common/loginView');
 
-	 var Gravitar = require('ui/common/gravitas');
+// 	 var Gravitar = require('ui/common/gravitas');
 
-	 var win = ti.UI.CreateWindow();
-	 var userPic = Gravitas.createGravitar({
-	 	email: "dqn8613@rit.edu",
-	 	defaultStyle: Gravitas_DEFAULT_CUSTOM,
-	 	size: 250,
-	 	rating: Gravitas_RATING_R;
-	 });
+// 	 var win = ti.UI.CreateWindow();
+// 	 var userPic = Gravitas.createGravitar({
+// 	 	email: "dqn8613@rit.edu",
+// 	 	defaultStyle: Gravitas_DEFAULT_CUSTOM,
+// 	 	size: 250,
+// 	 	rating: Gravitas_RATING_R;
+// 	 });
 	 
 	//var db = openDatabase('db.sqlite', '3.0', 'HiveMind', 20000);
 	//var userAuth;

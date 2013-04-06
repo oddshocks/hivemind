@@ -37,7 +37,6 @@ if (Ti.version < 1.8 ) {
 }
 else{
 	
-	//Ti.include("handheld/android/ApplicationWindow.js");
 
 	var login = Ti.UI.createWindow({
 		backgroundColor: "#ffffc5",
