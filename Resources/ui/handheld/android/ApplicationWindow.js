@@ -42,12 +42,12 @@
 // };
 // 
 // module.exports = ApplicationWindow;
-headerView = Ti.UI.createView(S.combine($$.headerView,{top:0})),
-		tabHeight = 60,
-		tabWidth = platformWidth/3,
-		tabView = Ti.UI.createView({
-			bottom:0,
-			height:tabHeight,
-			backgroundColor: "black",
-			width:platformWidth
-		}),
+// headerView = Ti.UI.createView(S.combine($$.headerView,{top:0})),
+// 		tabHeight = 60,
+// 		tabWidth = platformWidth/3,
+// 		tabView = Ti.UI.createView({
+// 			bottom:0,
+// 			height:tabHeight,
+// 			backgroundColor: "black",
+// 			width:platformWidth
+// 		}),
