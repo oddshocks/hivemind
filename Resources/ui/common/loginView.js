@@ -1,4 +1,8 @@
-var win = Titanium.UI.currentWindow;
+var win = Ti.UI.currentWindow;
+
+
+//Creates a view(wrapper) for our form elements
+var loginView = Ti.UI.createView();
 
 	var username = Titanium.UI.createTextField({
 		color:'#336699',
@@ -11,7 +15,7 @@ var win = Titanium.UI.currentWindow;
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
 	});
-	win.add(username);
+	loginView.add(username);
 
 	var password = Titanium.UI.createTextField({
 		color:'#336699',
@@ -25,7 +29,7 @@ var win = Titanium.UI.currentWindow;
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
 		borderStyle:Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
 	});
-	win.add(password);
+	loginView.add(password);
 
 	var loginButton  = Titanium.UI.createButton({
 		title:'Log in',
@@ -36,7 +40,7 @@ var win = Titanium.UI.currentWindow;
 		borderRadius:5,
 		font:{fontFamily:'Orbitron',fontWeight:'bold',fontSize:14}
 	});
-	win.add(loginButton);
+	loginView.add(loginButton);
 
 	var signInButton  = Titanium.UI.createButton({
 		title:'Sign up',
@@ -47,7 +51,13 @@ var win = Titanium.UI.currentWindow;
 		borderRadius:5,
 		font:{fontFamily:'Orbitron',fontWeight:'bold',fontSize:14}
 	});
-	win.add(signInButton);
+	loginView.add(signInButton);
+
+//Adds loginView to current window
+win.add(loginView);
+
+//creates	
+socialNav = Ti.UI.createView();
 
 	
 	/*
