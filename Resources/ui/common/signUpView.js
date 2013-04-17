@@ -13,19 +13,19 @@ var scrollView = Ti.UI.createScrollView({
 
 //Creates a view(wrapper) for our form elements
 var signUp = Ti.UI.createView({
-	backgroundColor: '#DDD5F000',
+	backgroundImage: 'images/rebel.png',
 	top: 0,
 	width: 300,
 	height: 800
 });
 var SignUp = Ti.UI.createLabel({
-		color:'#000',
+		color:'#D5FF0C',
   		font: { 
-  			fontFamily: 'sans-serif',
+  			fontFamily: 'orbitron-bold',
   			fontSize:32 },
-  		shadowColor: '#aaa',
+  		shadowColor: '#111',
   		shadowOffset: {x:5, y:5},
-  		text: 'Create Account',
+  		html: 'Create <br /> Account',
   		textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
   		top: 0,
   		width: Ti.UI.SIZE,
@@ -35,82 +35,82 @@ signUp.add(SignUp);
 
 var createUserName = Titanium.UI.createTextField({
 	color:'#D5FF0C',
-	backgroundColor: '#000',
-	top:60,
+	backgroundColor: '#EEE',
+	top:80,
 	width:'80%',
 	height:'4%',
-	font:{fontFamily: "fonts/orbitron-medium", fontSize: 12},
+	font:{fontFamily: "orbitron-medium", fontSize: 12},
 	hintText:'Create user name',
 	keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
 	returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
-	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_BEZEL
+	borderRadius: 10
 });
 signUp.add(createUserName);
 
 var password = Titanium.UI.createTextField({
 	color:'#D5FF0C',
-	backgroundColor: '#000',
-	top:110,
+	backgroundColor: '#EEE',
+	top:130,
 	width:'80%',
 	height:'4%',
-	font:{fontFamily: "fonts/orbitron-medium", fontSize: 12},
+	font:{fontFamily: "orbitron-medium", fontSize: 12},
 	hintText:' Enter password',
 	passwordMask:true,
 	keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
 	returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
-	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_BEZEL
+	borderRadius: 10
 });
 signUp.add(password);
 
-var confirmPassword = Titanium.UI.createTextField({
+var email = Titanium.UI.createTextField({
 	color:'#D5FF0C',
-	backgroundColor: '#000',
-	top:160,
+	backgroundColor: '#EEE',
+	top:180,
 	width:'80%',
 	height:'4%',
-	font:{fontFamily: "fonts/orbitron-medium", fontSize: 12},
-	hintText:' confirm password',
+	font:{fontFamily: "orbitron-medium", fontSize: 12},
+	hintText:' Enter email',
 	passwordMask:true,
 	keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
 	returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
-	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_BEZEL
+	borderRadius: 10
 });
-signUp.add(confirmPassword);
+signUp.add(email);
 
 var hives = Titanium.UI.createTextArea({
 	color:'#D5FF0C',
-	backgroundColor: '#000',
-	top:210,
+	backgroundColor: '#EEE',
+	top:230,
 	width:250,
 	height:240,
-	font:{fontFamily: "fonts/orbitron-medium", fontSize: 12},
+	font:{fontFamily: "orbitron-medium", fontSize: 12},
 	hintText:'Select Hives, separated by comma',
 	passwordMask:true,
 	keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
 	returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
-	borderStyle:Titanium.UI.INPUT_BORDERSTYLE_BEZEL
+	borderRadius: 10
 });
 signUp.add(hives);
 
 var createUser  = Titanium.UI.createButton({
 	title:'Join the Hive',
 	left: 40,
-	top:530,
+	top:550,
 	width:90,
 	height:55,
 	borderRadius:5,
-	font:{fontFamily:'Orbitron',fontWeight:'bold',fontSize:14}
+	font:{fontFamily:'orbitron-bold',fontWeight:'bold',fontSize:14}
 });
 signUp.add(createUser);
 
 var cancelButton  = Titanium.UI.createButton({
 	title:'Not feelin it',
-	top:530,
+	top:550,
 	left: 170,
 	width:90,
 	height:55,
 	borderRadius:5,
-	font:{fontFamily:'Orbitron',fontWeight:'bold',fontSize:14}
+	font:{fontFamily:'orbitron-bold',fontWeight:'bold',fontSize:14}
 });
 signUp.add(cancelButton);
 
