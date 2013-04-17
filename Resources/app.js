@@ -14,7 +14,6 @@ else{
 	Ti.UI.setBackgroundImage('ui/common/images/rebel.png');
 
 	var login = Ti.UI.createWindow({
-		// backgroundImage: 'ui/common/images/rebel`.png',
 		url: "ui/common/loginView.js"
 	});
 	login.open();

@@ -93,24 +93,22 @@ var hives = Titanium.UI.createTextArea({
 signUp.add(hives);
 
 var createUser  = Titanium.UI.createButton({
-	title:'Join the Hive',
-	left: 40,
+	backgroundImage: 'images/join.png',
+	left: 70,
 	top:550,
-	width:90,
-	height:55,
-	borderRadius:5,
-	font:{fontFamily:'orbitron-bold',fontWeight:'bold',fontSize:14}
+	width:50,
+	height:50,
+	borderRadius:5
 });
 signUp.add(createUser);
 
 var cancelButton  = Titanium.UI.createButton({
-	title:'Not feelin it',
+	backgroundImage: 'images/cancel.png',
 	top:550,
 	left: 170,
-	width:90,
-	height:55,
-	borderRadius:5,
-	font:{fontFamily:'orbitron-bold',fontWeight:'bold',fontSize:14}
+	width:50,
+	height:50,
+	borderRadius:5
 });
 signUp.add(cancelButton);
 
