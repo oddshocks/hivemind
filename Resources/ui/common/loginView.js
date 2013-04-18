@@ -4,7 +4,7 @@ var Cloud = ('ti.cloud');
 var Logo = Ti.UI.createLabel({
 		color:'#D5FF0C',
   		font: { 
-  			fontFamily: 'orbitron-bold',
+  			fontFamily: 'Geometry-soft',
   			fontSize:48 },
   		shadowColor: '#111',
   		shadowOffset: {

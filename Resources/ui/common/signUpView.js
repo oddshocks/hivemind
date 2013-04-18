@@ -21,7 +21,7 @@ var signUp = Ti.UI.createView({
 var SignUp = Ti.UI.createLabel({
 		color:'#D5FF0C',
   		font: { 
-  			fontFamily: 'orbitron-bold',
+  			fontFamily: 'Geometry-soft',
   			fontSize:32 },
   		shadowColor: '#111',
   		shadowOffset: {x:5, y:5},
@@ -127,5 +127,5 @@ createUser.addEventListener('click', function(e){
 * Cancel event Handling
 */
 cancelButton.addEventListener('click', function(e){
-	win.hide();
+	win.close();
 });

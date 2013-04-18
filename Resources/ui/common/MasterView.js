@@ -26,12 +26,12 @@ var userBio = Ti.UI.createView({
 
 	var userInfo = Ti.UI.createLabel({
 		text:'Design, Build and Test...keeping this iteration going',
-		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
 		font: {fontSize: 11},
 		color: '#FFF',
 		width:100,
 		top: 30,
-		left: '50%'
+		left: '60%'
 	});
 	userBio.add(userInfo);
 
@@ -96,5 +96,5 @@ viewNotes.addEventListener('click', function(e){
 });
 
 leave.addEventListener('click', function(e){
-	win2.hide();
+	win2.close();
 });

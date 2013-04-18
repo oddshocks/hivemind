@@ -9,11 +9,11 @@
     <id>com.hivemind.hivemind</id>
     <name>hivemind</name>
     <version>1.0</version>
-    <publisher>duynguyen</publisher>
+    <publisher>Dweebles Oddshocks Marc Brigham</publisher>
     <url>http://webdevduy.com</url>
     <description>Take and share notes collaboratively</description>
-    <copyright>2013 by duynguyen</copyright>
-    <icon>appicon.png</icon>
+    <copyright>2013 by David Gay, Duy Nguyen, Marc Brigham</copyright>
+    <icon>login.png</icon>
     <persistent-wifi>false</persistent-wifi>
     <prerendered-icon>false</prerendered-icon>
     <statusbar-style>default</statusbar-style>
