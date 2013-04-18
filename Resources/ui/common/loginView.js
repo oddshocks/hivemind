@@ -35,7 +35,7 @@ var loginView = Ti.UI.createView({
 		width:'80%',
 		height:'15%',
 		hintText:'Username',
-		font:{fontFamily: "orbitron-medium", fontSize: 12},
+		font:{fontSize: 12},
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
 	});
@@ -50,7 +50,7 @@ loginView.add(username);
 		width:'80%',
 		height:'15%',
 		hintText:'Password',
-		font:{fontFamily: "orbitron-medium", fontSize: 12},
+		font:{fontSize: 12},
 		passwordMask:true,
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
 		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,

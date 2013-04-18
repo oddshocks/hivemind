@@ -20,7 +20,7 @@ var userBio = Ti.UI.createView({
 		color: '#FFF',
 		width:200,
 		height:18,
-		top: 10,
+		top: '5%',
 	});
 	userBio.add(userName);
 
@@ -30,7 +30,7 @@ var userBio = Ti.UI.createView({
 		font: {fontSize: 11},
 		color: '#FFF',
 		width:100,
-		top: 30,
+		top: '22%',
 		left: '60%'
 	});
 	userBio.add(userInfo);
@@ -40,13 +40,14 @@ var userBio = Ti.UI.createView({
 		width: 70,
 		height: 70,
 		left: '15%',
-		borderRadius: 5
+		borderRadius: 5,
+		top: '5%'
 	});
 	userBio.add(userImage);
 
 var mainNav = Ti.UI.createView({
 	width: '100%',
-	top: 100
+	top: '30%'
 });
 	var takeNotes = Ti.UI.createButton({
 		backgroundImage: 'images/HarvestHoney.png',
