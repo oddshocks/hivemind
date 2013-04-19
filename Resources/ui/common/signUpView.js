@@ -117,7 +117,7 @@ win.add(scrollView);
 * Creating user button event Handling
 */
 createUser.addEventListener('click', function(e){
-	
+	alert('You have been successfully registered');
 });
 
 /*

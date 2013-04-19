@@ -15,6 +15,7 @@ else{
 
 	var login = Ti.UI.createWindow({
 		url: "ui/common/loginView.js"
+		// url: "ui/common/indivNotes.js"
 	});
 	login.open();
 }
