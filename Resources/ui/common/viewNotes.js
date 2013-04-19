@@ -95,43 +95,32 @@ var content = Ti.UI.createView({
 			fontFamily: 'Geometry-soft',
 			fontSize: 14
 		},
-		html: '<p>Start taking notes</p>'
+		html: '<p>Select note to view</p>'
 	});
 content.add(takeNotesLabel);
 
-	var takeNotes = Ti.UI.createTextArea({
-		top: '10%',
-		width: '80%',
-		height: '60%',
-		color: '#000',
-		borderRadius: 5,
-		font:{fontSize: 12},
-		hintText:'type in here',
-		passwordMask:true,
-		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
-		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT
-	});
-content.add(takeNotes);
+		var notes = Ti.UI.createTableView({
+			top: 25,
+			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
+		});
+		var row1 = Titanium.UI.createTableViewRow({
+    			title: 'Oracle connectivity'
+		});
+notes.appendRow(row1);
+		var row2 = Titanium.UI.createTableViewRow({
+    			title: 'Design Patterns for icons'
+		});
+notes.appendRow(row2);
+		var row3 = Titanium.UI.createTableViewRow({
+    			title: 'PHP notes'
+		});
+notes.appendRow(row3);
 
-	var saveButton  = Titanium.UI.createButton({
-		backgroundColor: '#11000000',
-		top:'80%',
-		left: '20%',
-		width:50,
-		height:50,
-		title: 'save',
-		font: {
-			fontFamily: 'Geometry-soft',
-			fontSize: 14
-		},
-		color:'#D5FF0C'
-	});
-content.add(saveButton);
+content.add(notes);
 
 	var cancelButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
 		top:'80%',
-		left: '65%',
 		width:60,
 		height:50,
 		title: 'cancel',

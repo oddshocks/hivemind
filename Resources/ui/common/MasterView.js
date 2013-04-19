@@ -91,7 +91,7 @@ takeNotes.addEventListener('click', function(e){
 
 viewNotes.addEventListener('click', function(e){
 	var notesView = Ti.UI.createWindow({
-		url: "notesView.js"
+		url: "viewNotes.js"
 	});
 	notesView.open();
 });
