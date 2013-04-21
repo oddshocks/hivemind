@@ -13,6 +13,21 @@ if (Ti.version < 1.8 ) {
 else{
 	Ti.UI.setBackgroundImage('ui/common/images/rebel.png');
 
+    // Bootstrap the SQLite database
+    var litedb = Ti.Database.open('hivemind');
+    // Boy, I sure hope JavaScript strings work like this...
+    litedb.execute('CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY, '
+        + 'nickname TEXT, email TEXT, password TEXT, firstname TEXT, '
+        + 'lastname TEXT, bio TEXT);'
+        + 'CREATE TABLE IF NOT EXISTS hives(id INTEGER PRIMARY KEY, '
+        + 'creation_date TEXT, description TEXT, creator INTEGER, '
+        + 'FOREIGN KEY(creator) REFERENCES users(id));'
+        + 'CREATE TABLE IF NOT EXISTS users_hives('
+        + 'user_id TEXT, hive_id TEXT, FOREIGN KEY(user_id) '
+        + 'REFERENCES users(id), FOREIGN KEY(hive_id) '
+        + 'REFERENCES hives(id));');
+    litedb.close();
+
 	var login = Ti.UI.createWindow({
 		url: "ui/common/loginView.js"
 		// url: "ui/common/indivNotes.js"
