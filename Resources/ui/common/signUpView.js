@@ -117,6 +117,13 @@ win.add(scrollView);
 * Creating user button event Handling
 */
 createUser.addEventListener('click', function(e){
+    // get the password hash
+    var hashed_pass = Titanium.Utils.md5HexDigest(password.value);
+    var litedb = Ti.Database.open('hivemind');
+    litedb.execute('INSERT INTO users (nickname, email, password) '
+                 + 'VALUES (?,?,?)', createUserName.value,
+                email.value, hashed_pass);
+    litedb.close();
 	alert('You have been successfully registered');
 });
 
