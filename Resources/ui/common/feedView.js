@@ -83,6 +83,7 @@ win.add(seperator);
 
 var content = Ti.UI.createView({
 	width: '100%',
+	height: '60%',
 	top: '33.5%',
 	backgroundImage: 'images/rebel.png'
 });
@@ -115,7 +116,7 @@ content.add(takeNotes);
 
 	var saveButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
-		top:'80%',
+		top:'65%',
 		left: '20%',
 		width:50,
 		height:50,
@@ -130,7 +131,7 @@ content.add(saveButton);
 
 	var cancelButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
-		top:'80%',
+		top:'65%',
 		left: '65%',
 		width:60,
 		height:50,
@@ -143,14 +144,37 @@ content.add(saveButton);
 	});
 content.add(cancelButton);
 
+var footer = Ti.UI.createView({
+	backgroundColor: '#111',
+	width: '100%',
+	height: '10%',
+	top: '85%'
+});
+	var homeIcon = Ti.UI.createButton({
+		backgroundImage: 'images/back.png',
+		left: 10
+	});
+footer.add(homeIcon);
+
+	var backIcon = Ti.UI.createButton({
+		backgroundImage: 'images/home.png',
+		left: 70
+	});
+footer.add(backIcon);
+
 header.add(navigation);
+
 win.add(header);
 win.add(content);
-
+win.add(footer);
 
 /*
-* Cancel event Handling
+* Event Handling
 */
 cancelButton.addEventListener('click', function(e){
 	win.close();
+});
+
+saveButton.addEventListener('click', function(e){
+	alert('Your notes have been saved');
 });

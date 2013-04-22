@@ -24,20 +24,6 @@ content.add(takeNotesLabel);
 	});
 content.add(stuff);
 
-	var more  = Titanium.UI.createButton({
-		backgroundColor: '#11000000',
-		top:'95%',
-		left: '10%',
-		title: 'view more notes',
-		font: {
-			fontFamily: 'Geometry-soft',
-			fontSize: 14
-		},
-		color:'#D5FF0C'
-	});
-content.add(more)
-
-
 	var cancelButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
 		top:'91%',
@@ -57,7 +43,7 @@ win.add(content);
 
 
 /*
-* Cancel event Handling
+* Event Handling
 */
 cancelButton.addEventListener('click', function(e){
 	win.close();

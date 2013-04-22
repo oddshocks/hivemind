@@ -138,8 +138,15 @@ win.add(content);
 
 
 /*
-* Cancel event Handling
+* Event Handling
 */
 cancelButton.addEventListener('click', function(e){
 	win.close();
+});
+
+row1.addEventListener('click', function(e){
+	var noteView = Ti.UI.createWindow({
+		url: "indivNotes.js"
+	});
+	noteView.open();
 });
