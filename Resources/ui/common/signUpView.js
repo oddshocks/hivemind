@@ -118,6 +118,9 @@ createUser.addEventListener('click', function(e){
     // get the password hash
     var hashed_pass = Titanium.Utils.md5HexDigest(password.value);
     var litedb = Ti.Database.open('hivemind');
+    // TODO: add hives at user creation
+    // (gonna do that after we better figure out how hives
+    // will work with users)
     litedb.execute('INSERT INTO users (nickname, email, password) '
                  + 'VALUES (?,?,?)', createUserName.value,
                 email.value, hashed_pass);
