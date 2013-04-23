@@ -1,4 +1,4 @@
-var win = Ti.UI.currentWindow;
+		var win = Ti.UI.currentWindow;
 
 var header = Ti.UI.createView({
 	width: '100%',
@@ -100,49 +100,30 @@ var content = Ti.UI.createView({
 	});
 content.add(takeNotesLabel);
 
+	var notesTitle = Ti.UI.createTextField({
+		top: '8%',
+		color: '#000',
+		width: '80%',
+		hintText: 'Title',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+		borderRadius: 7
+	});
+content.add(notesTitle);
+
 	var takeNotes = Ti.UI.createTextArea({
-		top: '10%',
+		top: '30%',
 		width: '80%',
 		height: '60%',
 		color: '#000',
 		borderRadius: 5,
 		font:{fontSize: 12},
 		hintText:'type in here',
-		passwordMask:true,
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
-		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+		borderRadius: 7
 	});
 content.add(takeNotes);
-
-	var saveButton  = Titanium.UI.createButton({
-		backgroundColor: '#11000000',
-		top:'65%',
-		left: '20%',
-		width:50,
-		height:50,
-		title: 'save',
-		font: {
-			fontFamily: 'Geometry-soft',
-			fontSize: 14
-		},
-		color:'#D5FF0C'
-	});
-content.add(saveButton);
-
-	var cancelButton  = Titanium.UI.createButton({
-		backgroundColor: '#11000000',
-		top:'65%',
-		left: '65%',
-		width:60,
-		height:50,
-		title: 'cancel',
-		font: {
-			fontFamily: 'Geometry-soft',
-			fontSize: 14
-		},
-		color:'#D5FF0C'
-	});
-content.add(cancelButton);
 
 var footer = Ti.UI.createView({
 	backgroundColor: '#111',
@@ -158,9 +139,37 @@ footer.add(homeIcon);
 
 	var backIcon = Ti.UI.createButton({
 		backgroundImage: 'images/home.png',
-		left: 70
+		left: 40
 	});
 footer.add(backIcon);
+
+	var saveButton  = Titanium.UI.createButton({
+		backgroundColor: '#11000000',
+		left: 175,
+		width:50,
+		height:50,
+		title: 'save',
+		font: {
+			fontFamily: 'Geometry-soft',
+			fontSize: 14
+		},
+		color:'#D5FF0C'
+	});
+footer.add(saveButton);
+
+	var cancelButton  = Titanium.UI.createButton({
+		backgroundColor: '#11000000',
+		left: 225,
+		width:60,
+		height:50,
+		title: 'clear',
+		font: {
+			fontFamily: 'Geometry-soft',
+			fontSize: 14
+		},
+		color:'#D5FF0C'
+	});
+footer.add(cancelButton);
 
 header.add(navigation);
 
