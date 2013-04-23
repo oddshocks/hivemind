@@ -30,15 +30,15 @@ var userBio = Ti.UI.createView({
 		font: {fontSize: 11},
 		color: '#FFF',
 		width:100,
-		top: '22%',
+		top: '25%',
 		left: '60%'
 	});
 	userBio.add(userInfo);
 
 	var userImage = Ti.UI.createImageView({
 		image: 'images/normal.jpg',
-		width: 70,
-		height: 70,
+		width: 50,
+		height: 50,
 		left: '15%',
 		borderRadius: 5,
 		top: '5%'
@@ -74,6 +74,7 @@ var leave = Ti.UI.createButton({
 		borderRadius: 10
 	});
 mainNav.add(leave);
+
 
 //adds user bio and and main view content to wrapper
 masterView.add(userBio);
