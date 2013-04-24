@@ -1,5 +1,4 @@
 var win = Ti.UI.currentWindow;
-var Cloud = ('ti.cloud');
 
 //Creates scroll view
 var scrollView = Ti.UI.createScrollView({

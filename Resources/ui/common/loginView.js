@@ -86,12 +86,13 @@ win.add(loginView);
 loginButton.addEventListener('click', function(e){
 	if (username.value != ' ' && password.value != ' ' ){
 		var litedb = Ti.Database.open('hivemind');
-		var query = litedb.execute('SELECT * FROM users WHERE username = ' + ' "' username.value + '"' + ' AND password = ' + ' "' password.value + '" ');
+		var query = litedb.execute('SELECT * FROM users WHERE username = ' + ' "' + username.value + '"' + ' AND password = ' + ' "' + password.value + '" ');
 		if(query.isValidRow() > 0){
 			var homeView = Ti.UI.createWindow({
 				url: "MasterView.js"
 			});
 			homeView.open();
+			litedb.close();
 		}
 		else{
 			alert('make sure your username and password are correct');

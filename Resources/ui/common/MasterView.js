@@ -1,4 +1,5 @@
 var win2 = Ti.UI.currentWindow;
+Ti.include('loginView.js');
 
 //creates a wrapper to store all of our views inside
 var masterView = Ti.UI.createView({
@@ -15,7 +16,7 @@ var userBio = Ti.UI.createView({
 	top: 0
 });
 	var userName = Ti.UI.createLabel({
-		text:'Dweebles',
+		text: username.value,
 		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 		color: '#FFF',
 		width:200,

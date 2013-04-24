@@ -32,4 +32,8 @@ else{
 		url: "ui/common/loginView.js"
 	});
 	login.open();
+
+	Ti.include("ui/common/loginView.js");
+    	Ti.include("ui/common/MasterView.js");
+    	Ti.include("ui/common/viewNotes.js");
 }
