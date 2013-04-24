@@ -1,4 +1,4 @@
-		var win = Ti.UI.currentWindow;
+var win = Ti.UI.currentWindow;
 
 var header = Ti.UI.createView({
 	width: '100%',
@@ -131,17 +131,17 @@ var footer = Ti.UI.createView({
 	height: '10%',
 	top: '85%'
 });
-	var homeIcon = Ti.UI.createButton({
+	var backIcon = Ti.UI.createButton({
 		backgroundImage: 'images/back.png',
 		left: 10
 	});
-footer.add(homeIcon);
+footer.add(backIcon);
 
-	var backIcon = Ti.UI.createButton({
+	var homeIcon = Ti.UI.createButton({
 		backgroundImage: 'images/home.png',
 		left: 40
 	});
-footer.add(backIcon);
+footer.add(homeIcon);
 
 	var saveButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
@@ -157,7 +157,7 @@ footer.add(backIcon);
 	});
 footer.add(saveButton);
 
-	var cancelButton  = Titanium.UI.createButton({
+	var clearButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
 		left: 225,
 		width:60,
@@ -169,7 +169,7 @@ footer.add(saveButton);
 		},
 		color:'#D5FF0C'
 	});
-footer.add(cancelButton);
+footer.add(clearButton);
 
 header.add(navigation);
 
@@ -180,10 +180,17 @@ win.add(footer);
 /*
 * Event Handling
 */
-cancelButton.addEventListener('click', function(e){
-	win.close();
+clearButton.addEventListener('click', function(e){
+	takeNotes.value = ' ';
 });
 
 saveButton.addEventListener('click', function(e){
 	alert('Your notes have been saved');
+});
+
+homeIcon.addEventListener('click', function(e){
+	win.close();
+});
+backIcon.addEventListener('click', function(e){
+	win.close();
 });
