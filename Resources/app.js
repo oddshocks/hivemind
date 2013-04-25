@@ -20,7 +20,7 @@ else{
         + 'AUTOINCREMENT, nickname TEXT, email TEXT, password TEXT, '
         + 'firstname TEXT, lastname TEXT, bio TEXT);'
         + 'CREATE TABLE IF NOT EXISTS hives(id INTEGER PRIMARY KEY '
-        + 'AUTOINCREMENT, creation_date TEXT, description TEXT, creator '
+        + 'AUTOINCREMENT, hiveName TEXT, creation_date TEXT, description TEXT, creator '
         + 'INTEGER, FOREIGN KEY(creator) REFERENCES users(id));'
         + 'CREATE TABLE IF NOT EXISTS users_hives('
         + 'user_id TEXT, hive_id TEXT, FOREIGN KEY(user_id) '
@@ -32,8 +32,4 @@ else{
 		url: "ui/common/loginView.js"
 	});
 	login.open();
-
-	Ti.include("ui/common/loginView.js");
-    	Ti.include("ui/common/MasterView.js");
-    	Ti.include("ui/common/viewNotes.js");
 }

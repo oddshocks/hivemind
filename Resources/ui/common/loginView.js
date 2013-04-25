@@ -1,5 +1,4 @@
 var win = Ti.UI.currentWindow;
-var Cloud = ('ti.cloud');
 
 var Logo = Ti.UI.createLabel({
 		color:'#D5FF0C',
@@ -86,13 +85,13 @@ win.add(loginView);
 loginButton.addEventListener('click', function(e){
 	if (username.value != ' ' && password.value != ' ' ){
 		var litedb = Ti.Database.open('hivemind');
-		var query = litedb.execute('SELECT * FROM users WHERE username = ' + ' "' + username.value + '"' + ' AND password = ' + ' "' + password.value + '" ');
+		var query = litedb.execute('SELECT * FROM users WHERE nickname = ' + ' "' + username.value + '"' + ' AND password = ' + ' "' + password.value + '" ');
 		if(query.isValidRow() > 0){
+			query.next();
 			var homeView = Ti.UI.createWindow({
 				url: "MasterView.js"
 			});
 			homeView.open();
-			litedb.close();
 		}
 		else{
 			alert('make sure your username and password are correct');
@@ -101,6 +100,8 @@ loginButton.addEventListener('click', function(e){
 	else{
 		alert('Please enter username and password');
 	}
+	query.close();
+	litedb.close();
 });
 
 /*
