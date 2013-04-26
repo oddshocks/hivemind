@@ -1,0 +1,18 @@
+[[Here is an idea of the intro text we can display on the initial splash screen
+and possibly upon pressing a help button as well.]]
+
+Welcome to Hivemind!
+
+Hivemind is a simple app that will help you take, share, and organize your
+notes!
+
+With Hivemind, all notes belong to a "hive". Hives are used to categorize your
+notes, say, for different classes you're taking or different projects you're
+working on.
+
+To get started, simply choose a hive and add some notes! If you're joining a
+hive which already has notes, you'll be able to see them right after joining.
+If you're in a hive, you have access to all of the notes in that hive!
+
+[[Any other features that we add or anything else we should say can go here.
+Please feel free to change/reword anything you'd like.]]
