@@ -145,6 +145,8 @@ win.add(footer);
 /*
 * Event Handling
 */
+// TODO: Again, do these two need to do different things?
+// If not, delete these comments and ignore me. :P
 backIcon.addEventListener('click', function(e){
 	win.close();
 });
