@@ -1,3 +1,9 @@
+/**
+ * Sign-up view
+ * This is the view from which users can
+ * register with the Hivemind application.
+ */
+
 var win = Ti.UI.currentWindow;
 
 //Creates scroll view

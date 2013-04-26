@@ -1,3 +1,8 @@
+/**
+ * Feed view
+ * This is the view used for contributing notes.
+ */
+
 var win = Ti.UI.currentWindow;
 
 var header = Ti.UI.createView({
@@ -6,6 +11,7 @@ var header = Ti.UI.createView({
 	top: 0
 });
 	
+// Hive selection menu and buttons
 var navigation = Ti.UI.createView({
 	width: '100%',
 	backgroundImage: 'images/rebel.png'
@@ -81,6 +87,7 @@ var seperator = Ti.UI.createView({
 });
 win.add(seperator);
 
+// Notetaking area
 var content = Ti.UI.createView({
 	width: '100%',
 	height: '60%',
@@ -125,6 +132,7 @@ content.add(notesTitle);
 	});
 content.add(takeNotes);
 
+// Back and home buttons
 var footer = Ti.UI.createView({
 	backgroundColor: '#111',
 	width: '100%',

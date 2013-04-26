@@ -1,3 +1,9 @@
+/**
+ * Master view
+ * This is a crucial point of the application,
+ * the central view.
+ */
+
 var win2 = Ti.UI.currentWindow;
 Ti.include('loginView.js');
 

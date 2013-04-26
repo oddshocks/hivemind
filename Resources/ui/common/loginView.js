@@ -1,5 +1,11 @@
+/**
+ * Login view
+ * The view used to log into the app.
+ */
+
 var win = Ti.UI.currentWindow;
 
+// Hivemind logo
 var Logo = Ti.UI.createLabel({
 		color:'#D5FF0C',
   		font: { 

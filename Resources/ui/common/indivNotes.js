@@ -1,3 +1,8 @@
+/**
+ * Indiv notes
+ * This is the view used for looking at a note.
+ */
+
 var win = Ti.UI.currentWindow;
 
 var content = Ti.UI.createView({
