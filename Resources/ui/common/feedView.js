@@ -100,24 +100,52 @@ var content = Ti.UI.createView({
 	});
 content.add(takeNotesLabel);
 
+	var notesTitle = Ti.UI.createTextField({
+		top: '8%',
+		color: '#000',
+		width: '80%',
+		hintText: 'Title',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+		borderRadius: 7
+	});
+content.add(notesTitle);
+
 	var takeNotes = Ti.UI.createTextArea({
-		top: '10%',
+		top: '30%',
 		width: '80%',
 		height: '60%',
 		color: '#000',
 		borderRadius: 5,
 		font:{fontSize: 12},
 		hintText:'type in here',
-		passwordMask:true,
 		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
-		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+		borderRadius: 7
 	});
 content.add(takeNotes);
 
+var footer = Ti.UI.createView({
+	backgroundColor: '#111',
+	width: '100%',
+	height: '10%',
+	top: '85%'
+});
+	var backIcon = Ti.UI.createButton({
+		backgroundImage: 'images/back.png',
+		left: 10
+	});
+footer.add(backIcon);
+
+	var homeIcon = Ti.UI.createButton({
+		backgroundImage: 'images/home.png',
+		left: 40
+	});
+footer.add(homeIcon);
+
 	var saveButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
-		top:'65%',
-		left: '20%',
+		left: 175,
 		width:50,
 		height:50,
 		title: 'save',
@@ -127,40 +155,21 @@ content.add(takeNotes);
 		},
 		color:'#D5FF0C'
 	});
-content.add(saveButton);
+footer.add(saveButton);
 
-	var cancelButton  = Titanium.UI.createButton({
+	var clearButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
-		top:'65%',
-		left: '65%',
+		left: 225,
 		width:60,
 		height:50,
-		title: 'cancel',
+		title: 'clear',
 		font: {
 			fontFamily: 'Geometry-soft',
 			fontSize: 14
 		},
 		color:'#D5FF0C'
 	});
-content.add(cancelButton);
-
-var footer = Ti.UI.createView({
-	backgroundColor: '#111',
-	width: '100%',
-	height: '10%',
-	top: '85%'
-});
-	var homeIcon = Ti.UI.createButton({
-		backgroundImage: 'images/back.png',
-		left: 10
-	});
-footer.add(homeIcon);
-
-	var backIcon = Ti.UI.createButton({
-		backgroundImage: 'images/home.png',
-		left: 70
-	});
-footer.add(backIcon);
+footer.add(clearButton);
 
 header.add(navigation);
 
@@ -171,10 +180,17 @@ win.add(footer);
 /*
 * Event Handling
 */
-cancelButton.addEventListener('click', function(e){
-	win.close();
+clearButton.addEventListener('click', function(e){
+	takeNotes.value = ' ';
 });
 
 saveButton.addEventListener('click', function(e){
 	alert('Your notes have been saved');
+});
+
+homeIcon.addEventListener('click', function(e){
+	win.close();
+});
+backIcon.addEventListener('click', function(e){
+	win.close();
 });

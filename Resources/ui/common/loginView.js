@@ -1,5 +1,4 @@
 var win = Ti.UI.currentWindow;
-var Cloud = ('ti.cloud');
 
 var Logo = Ti.UI.createLabel({
 		color:'#D5FF0C',
@@ -84,10 +83,25 @@ win.add(loginView);
 * Login event Handling
 */
 loginButton.addEventListener('click', function(e){
-	var homeView = Ti.UI.createWindow({
-		url: "MasterView.js"
-	});
-	homeView.open();
+	if (username.value != ' ' && password.value != ' ' ){
+		var litedb = Ti.Database.open('hivemind');
+		var query = litedb.execute('SELECT * FROM users WHERE nickname = ' + ' "' + username.value + '"' + ' AND password = ' + ' "' + password.value + '" ');
+		if(query.isValidRow() > 0){
+			query.next();
+			var homeView = Ti.UI.createWindow({
+				url: "MasterView.js"
+			});
+			homeView.open();
+		}
+		else{
+			alert('make sure your username and password are correct');
+		}
+	}
+	else{
+		alert('Please enter username and password');
+	}
+	query.close();
+	litedb.close();
 });
 
 /*

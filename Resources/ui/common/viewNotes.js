@@ -118,29 +118,37 @@ notes.appendRow(row3);
 
 content.add(notes);
 
-	var cancelButton  = Titanium.UI.createButton({
-		backgroundColor: '#11000000',
-		top:'80%',
-		width:60,
-		height:50,
-		title: 'cancel',
-		font: {
-			fontFamily: 'Geometry-soft',
-			fontSize: 14
-		},
-		color:'#D5FF0C'
+var footer = Ti.UI.createView({
+	backgroundColor: '#111',
+	width: '100%',
+	height: '10%',
+	top: '85%'
+});
+	var backIcon = Ti.UI.createButton({
+		backgroundImage: 'images/back.png',
+		left: 10
 	});
-content.add(cancelButton);
+footer.add(backIcon);
+
+	var homeIcon = Ti.UI.createButton({
+		backgroundImage: 'images/home.png',
+		left: 40
+	});
+footer.add(homeIcon);
 
 header.add(navigation);
 win.add(header);
 win.add(content);
+win.add(footer);
 
 
 /*
 * Event Handling
 */
-cancelButton.addEventListener('click', function(e){
+backIcon.addEventListener('click', function(e){
+	win.close();
+});
+homeIcon.addEventListener('click', function(e){
 	win.close();
 });
 

@@ -1,4 +1,5 @@
 var win2 = Ti.UI.currentWindow;
+Ti.include('loginView.js');
 
 //creates a wrapper to store all of our views inside
 var masterView = Ti.UI.createView({
@@ -15,7 +16,7 @@ var userBio = Ti.UI.createView({
 	top: 0
 });
 	var userName = Ti.UI.createLabel({
-		text:'Dweebles',
+		text: username.value,
 		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 		color: '#FFF',
 		width:200,
@@ -75,11 +76,38 @@ var leave = Ti.UI.createButton({
 	});
 mainNav.add(leave);
 
+var footer = Ti.UI.createView({
+	backgroundColor: '#111',
+	width: '100%',
+	height: '10%',
+	top: '85%'
+});
+	var homeIcon = Ti.UI.createButton({
+		backgroundImage: 'images/home.png',
+		left: 10
+	});
+footer.add(homeIcon);
+
+	var logOut = Ti.UI.createButton({
+		backgroundColor: '#11000000',
+		width:90,
+		height:50,
+		title: 'log out',
+		font: {
+			fontFamily: 'Geometry-soft',
+			fontSize: 14
+		},
+		color:'#D5FF0C',
+		left: 40
+	});
+footer.add(logOut);
+
 
 //adds user bio and and main view content to wrapper
 masterView.add(userBio);
 masterView.add(mainNav);
 win2.add(masterView);
+win2.add(footer);
 
 
 //view button events
@@ -97,6 +125,9 @@ viewNotes.addEventListener('click', function(e){
 	notesView.open();
 });
 
-leave.addEventListener('click', function(e){
+// leave.addEventListener('click', function(e){
+// 	win2.close();
+// });
+logOut.addEventListener('click', function(e){
 	win2.close();
 });
