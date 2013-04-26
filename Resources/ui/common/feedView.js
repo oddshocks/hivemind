@@ -185,6 +185,11 @@ clearButton.addEventListener('click', function(e){
 });
 
 saveButton.addEventListener('click', function(e){
+    // TODO: Interact with the MySQL database here to
+    // add a note. Not sure how we're implementing that.
+    // If I can help with this part, let me know, unless
+    // Marc has it covered. I assume this is where
+    // we'll call his PHP script?
 	alert('Your notes have been saved');
 });
 
