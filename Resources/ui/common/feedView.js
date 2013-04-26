@@ -188,6 +188,10 @@ saveButton.addEventListener('click', function(e){
 	alert('Your notes have been saved');
 });
 
+
+// TODO: Make this go home? Or does it already? This code
+// does the same thing as the "back" event listener below
+// it.
 homeIcon.addEventListener('click', function(e){
 	win.close();
 });
