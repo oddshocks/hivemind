@@ -15,7 +15,6 @@ else{
 
 	// Bootstrap the SQLite database
     var litedb = Ti.Database.open('hivemind');
-    // Boy, I sure hope JavaScript strings work like this...
     litedb.execute('CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY '
         + 'AUTOINCREMENT, nickname TEXT, email TEXT, password TEXT, '
         + 'firstname TEXT, lastname TEXT, bio TEXT);'

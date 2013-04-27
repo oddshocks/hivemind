@@ -1,3 +1,8 @@
+/**
+ * Feed view
+ * This is the view used for contributing notes.
+ */
+
 var win = Ti.UI.currentWindow;
 
 var header = Ti.UI.createView({
@@ -6,6 +11,7 @@ var header = Ti.UI.createView({
 	top: 0
 });
 	
+// Hive selection menu and buttons
 var navigation = Ti.UI.createView({
 	width: '100%',
 	backgroundImage: 'images/rebel.png'
@@ -81,6 +87,7 @@ var seperator = Ti.UI.createView({
 });
 win.add(seperator);
 
+// Notetaking area
 var content = Ti.UI.createView({
 	width: '100%',
 	height: '60%',
@@ -125,6 +132,7 @@ content.add(notesTitle);
 	});
 content.add(takeNotes);
 
+// Back and home buttons
 var footer = Ti.UI.createView({
 	backgroundColor: '#111',
 	width: '100%',
@@ -185,9 +193,18 @@ clearButton.addEventListener('click', function(e){
 });
 
 saveButton.addEventListener('click', function(e){
+    // TODO: Interact with the MySQL database here to
+    // add a note. Not sure how we're implementing that.
+    // If I can help with this part, let me know, unless
+    // Marc has it covered. I assume this is where
+    // we'll call his PHP script?
 	alert('Your notes have been saved');
 });
 
+
+// TODO: Make this go home? Or does it already? This code
+// does the same thing as the "back" event listener below
+// it.
 homeIcon.addEventListener('click', function(e){
 	win.close();
 });

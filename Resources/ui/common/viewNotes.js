@@ -1,3 +1,9 @@
+/**
+ * View notes view
+ * This allows users to browse the notes
+ * within a hive of their choosing.
+ */
+
 var win = Ti.UI.currentWindow;
 
 var xhr = Titanium.Network.createHTTPClient();
@@ -21,7 +27,8 @@ var header = Ti.UI.createView({
 	height: '33%',
 	top: 0
 });
-	
+
+// Navigation menu allowing hive selection
 var navigation = Ti.UI.createView({
 	width: '100%',
 	backgroundImage: 'images/rebel.png'
@@ -97,6 +104,7 @@ var seperator = Ti.UI.createView({
 });
 win.add(seperator);
 
+// Content section containing list of notes in the selected hive
 var content = Ti.UI.createView({
 	width: '100%',
 	top: '33.5%',
@@ -161,6 +169,8 @@ win.add(footer);
 /*
 * Event Handling
 */
+// TODO: Again, do these two need to do different things?
+// If not, delete these comments and ignore me. :P
 backIcon.addEventListener('click', function(e){
 	win.close();
 });
