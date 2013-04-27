@@ -15,7 +15,8 @@ var userBio = Ti.UI.createView({
 	height: '20%',
 	top: 0
 });
-	var userName = Ti.UI.createLabel({
+
+	var nickName = Ti.UI.createLabel({
 		text: username.value,
 		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 		color: '#FFF',
@@ -23,10 +24,15 @@ var userBio = Ti.UI.createView({
 		height:18,
 		top: '5%',
 	});
-	userBio.add(userName);
+	userBio.add(nickName);
+
+var litedb = Ti.Database.open('hivemind');
+var userQuery = litedb.execute('SELECT * FROM users WHERE nickname = ' + ' " ' + username.value + ' " ');
+while(userQuery.isValidRow()){
+	var userDesc = userQuery.fieldByName('bio');
 
 	var userInfo = Ti.UI.createLabel({
-		text:'Design, Build and Test...keeping this iteration going',
+		text: userDesc,
 		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
 		font: {fontSize: 11},
 		color: '#FFF',
@@ -35,6 +41,9 @@ var userBio = Ti.UI.createView({
 		left: '60%'
 	});
 	userBio.add(userInfo);
+}
+userQuery.close();
+litedb.close();
 
 	var userImage = Ti.UI.createImageView({
 		image: 'images/normal.jpg',
@@ -51,7 +60,10 @@ var mainNav = Ti.UI.createView({
 	top: '30%'
 });
 	var takeNotes = Ti.UI.createButton({
-		backgroundImage: 'images/HarvestHoney.png',
+		// backgroundImage: 'images/HarvestHoney.png',
+		backgroundColor: '#454346',
+		color: '#D5FF0C',
+		html: '<p>Take Notes</p>',
 		width: 150,
 		height: 50,
 		top: 10,
@@ -60,21 +72,28 @@ var mainNav = Ti.UI.createView({
 mainNav.add(takeNotes);
 
 	var viewNotes = Ti.UI.createButton({
-		backgroundImage: 'images/BuzzHive.png',
+		// backgroundImage: 'images/BuzzHive.png',
+		backgroundColor: '#454346',
+		color: '#D5FF0C',
+		html: '<p>View Notes</p>',
 		width: 150,
 		height: 50,
 		top: 70,
 		borderRadius: 10
 	});
 mainNav.add(viewNotes);
-var leave = Ti.UI.createButton({
-		backgroundImage: 'images/RoamFree.png',
+
+var edit = Ti.UI.createButton({
+		// backgroundImage: 'images/RoamFree.png',
+		backgroundColor: '#454346',
+		color: '#D5FF0C',
+		html: '<p>Edit Notes</p>',
 		width: 150,
 		height: 50,
 		top: 130,
 		borderRadius: 10
 	});
-mainNav.add(leave);
+mainNav.add(edit);
 
 var footer = Ti.UI.createView({
 	backgroundColor: '#111',
@@ -125,9 +144,13 @@ viewNotes.addEventListener('click', function(e){
 	notesView.open();
 });
 
-// leave.addEventListener('click', function(e){
-// 	win2.close();
-// });
+edit.addEventListener('click', function(e){
+	var editNotes = Ti.UI.createWindow({
+		url: "editNotes.js"
+	});
+	editNotes.open();
+});
+
 logOut.addEventListener('click', function(e){
 	win2.close();
 });
