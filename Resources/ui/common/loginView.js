@@ -91,8 +91,6 @@ win.add(loginView);
 loginButton.addEventListener('click', function(e){
 
 	if (username.value != '' && password.value != '' ){
-	// alert(username.value);
-	// alert(password.value);
 		var litedb = Ti.Database.open('hivemind');
         		var userPassword =  Titanium.Utils.md5HexDigest(password.value);
 		var query = litedb.execute('SELECT * FROM users WHERE nickname = ' + ' "' + username.value + '"' + ' AND password = ' + ' "' + userPassword + '" ');
@@ -106,12 +104,11 @@ loginButton.addEventListener('click', function(e){
 		else{
 			alert('make sure your username and password are correct');
 		}
+	litedb.close();
 	}
 	else{
 		alert('Please enter username and password');
 	}
-	query.close();
-	litedb.close();
 });
 
 /*
