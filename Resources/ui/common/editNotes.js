@@ -1,9 +1,3 @@
-/**
- * View notes view
- * This allows users to browse the notes
- * within a hive of their choosing.
- */
-
 var win = Ti.UI.currentWindow;
 
 // var xhr = Titanium.Network.createHTTPClient();
@@ -16,7 +10,7 @@ var win = Ti.UI.currentWindow;
 //     var json = json.cats;
 //     var pos;
 //     for( pos=0; pos < jsoncats.length; pos++){
-//         Ti.UI.info(json[pos].cat_name, json[pos].colour_name);
+//         Ti.UI.info(json[pos].title, json[pos].);
 //     }
 // };
 // xhr.open('GET', <'http://marcbrigham.com/hivemind.php'>);
@@ -27,8 +21,7 @@ var header = Ti.UI.createView({
 	height: '33%',
 	top: 0
 });
-
-// Navigation menu allowing hive selection
+	
 var navigation = Ti.UI.createView({
 	width: '100%',
 	backgroundImage: 'images/rebel.png'
@@ -104,7 +97,6 @@ var seperator = Ti.UI.createView({
 });
 win.add(seperator);
 
-// Content section containing list of notes in the selected hive
 var content = Ti.UI.createView({
 	width: '100%',
 	top: '33.5%',
@@ -119,7 +111,7 @@ var content = Ti.UI.createView({
 			fontFamily: 'Geometry-soft',
 			fontSize: 14
 		},
-		html: '<p>Select note to view</p>'
+		html: '<p>Select note to edit</p>'
 	});
 content.add(takeNotesLabel);
 
@@ -127,18 +119,21 @@ content.add(takeNotesLabel);
 			top: 25,
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 		});
-		var row1 = Titanium.UI.createTableViewRow({
-    			title: 'Oracle connectivity'
-		});
-notes.appendRow(row1);
-		var row2 = Titanium.UI.createTableViewRow({
-    			title: 'Design Patterns for icons'
-		});
-notes.appendRow(row2);
-		var row3 = Titanium.UI.createTableViewRow({
-    			title: 'PHP notes'
-		});
-notes.appendRow(row3);
+			var row1 = Titanium.UI.createTableViewRow({
+    				// title: json[pos].title[1]
+    				title: 'Oracle DB connectivity'
+			});
+		notes.appendRow(row1);
+			var row2 = Titanium.UI.createTableViewRow({
+    				// title: json[pos].title[2]
+    				title: 'Design patterns'
+			});
+		notes.appendRow(row2);
+			var row3 = Titanium.UI.createTableViewRow({
+    				// title: json[pos].title[3]
+    				title: 'PHP ado connectivy'
+			});
+		notes.appendRow(row3);
 
 content.add(notes);
 
@@ -169,8 +164,6 @@ win.add(footer);
 /*
 * Event Handling
 */
-// TODO: Again, do these two need to do different things?
-// If not, delete these comments and ignore me. :P
 backIcon.addEventListener('click', function(e){
 	win.close();
 });
@@ -180,7 +173,7 @@ homeIcon.addEventListener('click', function(e){
 
 row1.addEventListener('click', function(e){
 	var noteView = Ti.UI.createWindow({
-		url: "indivNotes.js"
+		url: "editIndivNotes.js"
 	});
 	noteView.open();
 });

@@ -1,34 +1,17 @@
 /**
- * View notes view
- * This allows users to browse the notes
- * within a hive of their choosing.
+ * Edit Individual Notes view
+ * This is the view used for editing an individual note
  */
 
 var win = Ti.UI.currentWindow;
-
-// var xhr = Titanium.Network.createHTTPClient();
-// xhr.onload = function(){
-//     var json = JSON.parse(this.responseText);
-//     if (!json) { 
-//         Titanium.API.info('Error - Null return!'); 
-//         return;
-//     }
-//     var json = json.cats;
-//     var pos;
-//     for( pos=0; pos < jsoncats.length; pos++){
-//         Ti.UI.info(json[pos].cat_name, json[pos].colour_name);
-//     }
-// };
-// xhr.open('GET', <'http://marcbrigham.com/hivemind.php'>);
-// xhr.send();
 
 var header = Ti.UI.createView({
 	width: '100%',
 	height: '33%',
 	top: 0
 });
-
-// Navigation menu allowing hive selection
+	
+// Hive selection menu and buttons
 var navigation = Ti.UI.createView({
 	width: '100%',
 	backgroundImage: 'images/rebel.png'
@@ -104,9 +87,10 @@ var seperator = Ti.UI.createView({
 });
 win.add(seperator);
 
-// Content section containing list of notes in the selected hive
+// Notetaking area
 var content = Ti.UI.createView({
 	width: '100%',
+	height: '60%',
 	top: '33.5%',
 	backgroundImage: 'images/rebel.png'
 });
@@ -119,29 +103,36 @@ var content = Ti.UI.createView({
 			fontFamily: 'Geometry-soft',
 			fontSize: 14
 		},
-		html: '<p>Select note to view</p>'
+		html: '<p>Start taking notes</p>'
 	});
 content.add(takeNotesLabel);
 
-		var notes = Ti.UI.createTableView({
-			top: 25,
-			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
-		});
-		var row1 = Titanium.UI.createTableViewRow({
-    			title: 'Oracle connectivity'
-		});
-notes.appendRow(row1);
-		var row2 = Titanium.UI.createTableViewRow({
-    			title: 'Design Patterns for icons'
-		});
-notes.appendRow(row2);
-		var row3 = Titanium.UI.createTableViewRow({
-    			title: 'PHP notes'
-		});
-notes.appendRow(row3);
+	var notesTitle = Ti.UI.createTextField({
+		top: '8%',
+		color: '#000',
+		width: '80%',
+		hintText: 'Title',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+		borderRadius: 7
+	});
+content.add(notesTitle);
 
-content.add(notes);
+	var takeNotes = Ti.UI.createTextArea({
+		top: '30%',
+		width: '80%',
+		height: '60%',
+		color: '#000',
+		borderRadius: 5,
+		font:{fontSize: 12},
+		hintText:'type in here',
+		keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
+		returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+		borderRadius: 7
+	});
+content.add(takeNotes);
 
+// Back and home buttons
 var footer = Ti.UI.createView({
 	backgroundColor: '#111',
 	width: '100%',
@@ -160,27 +151,63 @@ footer.add(backIcon);
 	});
 footer.add(homeIcon);
 
+	var saveButton  = Titanium.UI.createButton({
+		backgroundColor: '#11000000',
+		left: 175,
+		width:50,
+		height:50,
+		title: 'save',
+		font: {
+			fontFamily: 'Geometry-soft',
+			fontSize: 14
+		},
+		color:'#D5FF0C'
+	});
+footer.add(saveButton);
+
+	var clearButton  = Titanium.UI.createButton({
+		backgroundColor: '#11000000',
+		left: 225,
+		width:60,
+		height:50,
+		title: 'clear',
+		font: {
+			fontFamily: 'Geometry-soft',
+			fontSize: 14
+		},
+		color:'#D5FF0C'
+	});
+footer.add(clearButton);
+
 header.add(navigation);
+
 win.add(header);
 win.add(content);
 win.add(footer);
 
-
 /*
 * Event Handling
 */
-// TODO: Again, do these two need to do different things?
-// If not, delete these comments and ignore me. :P
-backIcon.addEventListener('click', function(e){
-	win.close();
+clearButton.addEventListener('click', function(e){
+	takeNotes.value = ' ';
 });
+
+saveButton.addEventListener('click', function(e){
+    // TODO: Interact with the MySQL database here to
+    // add a note. Not sure how we're implementing that.
+    // If I can help with this part, let me know, unless
+    // Marc has it covered. I assume this is where
+    // we'll call his PHP script?
+	alert('Your notes have been saved');
+});
+
+
+// TODO: Make this go home? Or does it already? This code
+// does the same thing as the "back" event listener below
+// it.
 homeIcon.addEventListener('click', function(e){
 	win.close();
 });
-
-row1.addEventListener('click', function(e){
-	var noteView = Ti.UI.createWindow({
-		url: "indivNotes.js"
-	});
-	noteView.open();
+backIcon.addEventListener('click', function(e){
+	win.close();
 });

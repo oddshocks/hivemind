@@ -90,27 +90,27 @@ win.add(loginView);
 */
 loginButton.addEventListener('click', function(e){
 	if (username.value != ' ' && password.value != ' ' ){
-		var litedb = Ti.Database.open('hivemind');
+		// var litedb = Ti.Database.open('hivemind');
         // TODO: This query should be looking for the password after hashing it, right?
         // Unless you did that elsewhere, I think it is necessary to hash the password
         // input to see if it matches the hash in the database.
-		var query = litedb.execute('SELECT * FROM users WHERE nickname = ' + ' "' + username.value + '"' + ' AND password = ' + ' "' + password.value + '" ');
-		if(query.isValidRow() > 0){
-			query.next();
+		// var query = litedb.execute('SELECT * FROM users WHERE nickname = ' + ' "' + username.value + '"' + ' AND password = ' + ' "' + password.value + '" ');
+		// if(query.isValidRow() > 0){
+		// 	query.next();
 			var homeView = Ti.UI.createWindow({
 				url: "MasterView.js"
 			});
 			homeView.open();
 		}
-		else{
-			alert('make sure your username and password are correct');
-		}
-	}
-	else{
-		alert('Please enter username and password');
-	}
-	query.close();
-	litedb.close();
+		// else{
+		// 	alert('make sure your username and password are correct');
+		// }
+	// }
+	// else{
+	// 	alert('Please enter username and password');
+	// }
+	// query.close();
+	// litedb.close();
 });
 
 /*
