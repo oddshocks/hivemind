@@ -124,7 +124,7 @@ createUser.addEventListener('click', function(e){
 		var hashed_pass = Titanium.Utils.md5HexDigest(password.value);
     		var litedb = Ti.Database.open('hivemind');
     		litedb.execute('INSERT INTO users (nickname, email, password) '+ 'VALUES (?,?,?)', createUserName.value, email.value, hashed_pass);
-		litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?,?,?)', hives.value);
+		// litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?,?,?)', hives.value);
 
      		// var query = litedb.execute('SELECT * FROM users');
      		// while(query.isValidRow()){

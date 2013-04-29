@@ -14,6 +14,7 @@ else{
 	Ti.UI.setBackgroundImage('ui/common/images/rebel.png');
 
 	// Bootstrap the SQLite database
+
     var litedb = Ti.Database.open('hivemind');
     litedb.execute('CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY '
         + 'AUTOINCREMENT, nickname TEXT, email TEXT, password TEXT, '

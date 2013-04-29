@@ -54,7 +54,7 @@ content.add(stuff);
 		left: '65%',
 		width:60,
 		height:50,
-		title: 'cancel',
+		title: 'back',
 		font: {
 			fontFamily: 'Geometry-soft',
 			fontSize: 14
