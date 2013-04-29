@@ -91,9 +91,6 @@ win.add(loginView);
 loginButton.addEventListener('click', function(e){
 	if (username.value != ' ' && password.value != ' ' ){
 		var litedb = Ti.Database.open('hivemind');
-        // TODO: This query should be looking for the password after hashing it, right?
-        // Unless you did that elsewhere, I think it is necessary to hash the password
-        // input to see if it matches the hash in the database.
         		var userPassword =  Titanium.Utils.md5HexDigest(password.value);
 		var query = litedb.execute('SELECT * FROM users WHERE nickname = ' + ' "' + username.value + '"' + ' AND password = ' + ' "' + userPassword + '" ');
 		if(query.isValidRow() > 0){
