@@ -123,15 +123,15 @@ createUser.addEventListener('click', function(e){
 	if(createUserName != ' ' && password != ' ' && email != ' '){
 		var hashed_pass = Titanium.Utils.md5HexDigest(password.value);
     		var litedb = Ti.Database.open('hivemind');
-    		// litedb.execute('INSERT INTO users (nickname, email, password) '+ 'VALUES (?,?,?)', createUserName.value, email.value, hashed_pass);
-			// litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?)', hives.value);
+    		litedb.execute('INSERT INTO users (nickname, email, password) '+ 'VALUES (?,?,?)', createUserName.value, email.value, hashed_pass);
+			litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?)', hives.value);
 
-     		  var query = litedb.execute('SELECT * FROM hives');
-     		  while(query.isValidRow()){
-     		 	 var nickId = query.fieldByName('hiveName');
-     		 	 Ti.API.info(nickId);
-     		 	 query.next();
-     		  }
+     		 // var query = litedb.execute('SELECT * FROM users_hives');
+     		 // while(query.isValidRow()){
+     		 	// var nickId = query.fieldByName('user_id');
+     		 	// Ti.API.info(nickId);
+     		 	// query.next();
+     		 // }
     		litedb.close();
 		alert( createUserName.value + ' \n has been successfully registered');
 	}
