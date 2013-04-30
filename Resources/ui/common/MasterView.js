@@ -49,25 +49,29 @@ userBio.add(editUser);
 
 var litedb = Ti.Database.open('hivemind');
 var userQuery = litedb.execute('SELECT * FROM users');
-	var userDesc = userQuery.fieldByName('bio');
-
-	var userInfo = Ti.UI.createLabel({
-		html: '<p>'+userDesc+'</p>',
-		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
-		font: {fontSize: 11},
-		color: '#FFF',
-		width:100,
-		top: '25%',
-		left: '60%'
+while(userQuery.isValidRow()){
+     		 	 var nickId = userQuery.fieldByName('bio');
+     		 	 var userDesc = userQuery.field(1);
+     		 	 
+     		 	 var userInfo = Ti.UI.createLabel({
+					html: '<p>'+userDesc+'</p>',
+					textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
+					font: {fontSize: 11},
+					color: '#FFF',
+					width:100,
+					top: '25%',
+					left: '60%'
 	});
 	userBio.add(userInfo);
+    userQuery.next();
+}
 userQuery.close();
 litedb.close();
 
 	var userImage = Ti.UI.createImageView({
 		image: 'images/normal.jpg',
-		width: 50,
-		height: 50,
+		width: 100,
+		height: 100,
 		left: '15%',
 		borderRadius: 5,
 		top: '5%'

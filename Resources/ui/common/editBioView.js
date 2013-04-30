@@ -102,15 +102,15 @@ win.add(scrollView);
 createUser.addEventListener('click', function(e){
 	if( userDesc != ''){	
     		var litedb = Ti.Database.open('hivemind');
-    		 litedb.execute('INSERT INTO users (bio) '+ 'VALUES (?)', userDesc.value);
+    		// litedb.execute('INSERT INTO users (bio) '+ 'VALUES (?)', userDesc.value);
 			 // litedb.execute('Update INTO hives (hiveName) '+ 'VALUES (?)', hives.value);
 
-     		  // var query = litedb.execute('SELECT * FROM hives');
-     		  // while(query.isValidRow()){
-     		 	 // var nickId = query.fieldByName('hiveName');
-     		 	 // Ti.API.info(nickId);
-     		 	 // query.next();
-     		  // }
+     		  var query = litedb.execute('SELECT bio FROM users');
+     		  while(query.isValidRow()){
+     		 	 var nickId = query.fieldByName('bio');
+     		 	 Ti.API.info(nickId);
+     		 	 query.next();
+     		  }
     		litedb.close();
 		// alert( createUserName.value + ' \n has been successfully registered');
 	 }
