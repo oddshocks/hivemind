@@ -16,7 +16,7 @@ else{
 	// Bootstrap the SQLite database
 
     var litedb = Ti.Database.open('hivemind');
-    litedb.execute('CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY '
+    	litedb.execute('CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY '
         + 'AUTOINCREMENT, nickname TEXT, email TEXT, password TEXT, '
         + 'firstname TEXT, lastname TEXT, bio TEXT);');
         litedb.execute('CREATE TABLE IF NOT EXISTS hives(id INTEGER PRIMARY KEY '
@@ -29,7 +29,8 @@ else{
     litedb.close();
 
 	var login = Ti.UI.createWindow({
-		url: "ui/common/loginView.js"
+		 url: "ui/common/loginView.js"
+		//url: "ui/common/editBioView.js"
 	});
 	login.open();
 }

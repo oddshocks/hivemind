@@ -22,23 +22,37 @@ var userBio = Ti.UI.createView({
 	top: 0
 });
 
-	var nickName = Ti.UI.createLabel({
-		text: username.value,
-		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-		color: '#FFF',
-		width:200,
-		height:18,
-		top: '5%',
-	});
-	userBio.add(nickName);
+//edit userbio
+var editUser = Ti.UI.createButton({
+	title: 'edit Bio',
+	left: '15%',
+	top: 100,
+	color: '#D5FF0C',
+	font: {fontSize: 11},
+	backgroundColor: '#11000000',
+	width: 50,
+	height: 40
+}); 
+userBio.add(editUser);
+
+
+
+	// var nickName = Ti.UI.createLabel({
+		// text: username.value,
+		// textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+		// color: '#FFF',
+		// width:200,
+		// height:18,
+		// top: '5%',
+	// });
+	// userBio.add(nickName);
 
 var litedb = Ti.Database.open('hivemind');
-var userQuery = litedb.execute('SELECT * FROM users WHERE nickname = ' + ' " ' + username.value + ' " ');
-while(userQuery.isValidRow()){
+var userQuery = litedb.execute('SELECT * FROM users');
 	var userDesc = userQuery.fieldByName('bio');
 
 	var userInfo = Ti.UI.createLabel({
-		text: userDesc,
+		html: '<p>'+userDesc+'</p>',
 		textAlign: Ti.UI.TEXT_ALIGNMENT_LEFT,
 		font: {fontSize: 11},
 		color: '#FFF',
@@ -47,7 +61,6 @@ while(userQuery.isValidRow()){
 		left: '60%'
 	});
 	userBio.add(userInfo);
-}
 userQuery.close();
 litedb.close();
 
@@ -136,6 +149,13 @@ win2.add(footer);
 
 
 //view button events
+editUser.addEventListener('click', function(e){
+	var editBioView = Ti.UI.createWindow({
+		url: "editBioView.js"
+	});
+	editBioView.open();
+});
+
 takeNotes.addEventListener('click', function(e){
 	var feedView = Ti.UI.createWindow({
 		url: "feedView.js"
