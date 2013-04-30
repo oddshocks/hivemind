@@ -99,6 +99,7 @@ loginButton.addEventListener('click', function(e){
 			var homeView = Ti.UI.createWindow({
 				url: "MasterView.js"
 			});
+			homeView.passedName = username.value;
 			homeView.open();
 		}
 		else{
