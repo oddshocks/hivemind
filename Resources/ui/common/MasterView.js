@@ -36,32 +36,33 @@ var editUser = Ti.UI.createButton({
 userBio.add(editUser);
 
 
+// TODO: What is this for? Can we get rid of it?
 
-	// var nickName = Ti.UI.createLabel({
-		// text: username.value,
-		// textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-		// color: '#FFF',
-		// width:200,
-		// height:18,
-		// top: '5%',
-	// });
-	// userBio.add(nickName);
+// var nickName = Ti.UI.createLabel({
+    // text: username.value,
+    // textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
+    // color: '#FFF',
+    // width:200,
+    // height:18,
+    // top: '5%',
+// });
+// userBio.add(nickName);
 
 var litedb = Ti.Database.open('hivemind');
 var userQuery = litedb.execute('SELECT * FROM users WHERE nickname = ' + '"t"');
 while(userQuery.isValidRow()){
-     		 	 var nickId = userQuery.fieldByName('bio');
-     		 	 // var userDesc = userQuery.field(0);
-     		 	 
-     		 	 var userInfo = Ti.UI.createLabel({
-					html: '<p>'+nickId+'</p>',
-					textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
-					font: {fontSize: 11},
-					color: '#FFF',
-					width:200,
-					height: 200,
-					top: '5%',
-					left: '60%'
+    var nickId = userQuery.fieldByName('bio');
+    // var userDesc = userQuery.field(0);
+     
+    var userInfo = Ti.UI.createLabel({
+        html: '<p>'+nickId+'</p>',
+        textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+        font: {fontSize: 11},
+        color: '#FFF',
+        width:200,
+        height: 200,
+        top: '5%',
+        left: '60%'
 	});
 	userBio.add(userInfo);
     userQuery.next();
@@ -69,42 +70,43 @@ while(userQuery.isValidRow()){
 userQuery.close();
 litedb.close();
 
-	var userImage = Ti.UI.createImageView({
-		image: 'images/normal.jpg',
-		width: 50,
-		height: 50,
-		left: '15%',
-		borderRadius: 5,
-		top: '5%'
-	});
-	userBio.add(userImage);
+var userImage = Ti.UI.createImageView({
+    image: 'images/normal.jpg',
+    width: 50,
+    height: 50,
+    left: '15%',
+    borderRadius: 5,
+    top: '5%'
+});
+userBio.add(userImage);
 
 var mainNav = Ti.UI.createView({
 	width: '100%',
 	top: '30%'
 });
-	var takeNotes = Ti.UI.createButton({
-		// backgroundImage: 'images/HarvestHoney.png',
-		backgroundColor: '#454346',
-		color: '#D5FF0C',
-		title: 'Take Notes',
-		width: 150,
-		height: 50,
-		top: 10,
-		borderRadius: 10
-	});
+
+var takeNotes = Ti.UI.createButton({
+    // backgroundImage: 'images/HarvestHoney.png',
+    backgroundColor: '#454346',
+    color: '#D5FF0C',
+    title: 'Take Notes',
+    width: 150,
+    height: 50,
+    top: 10,
+    borderRadius: 10
+});
 mainNav.add(takeNotes);
 
-	var viewNotes = Ti.UI.createButton({
-		// backgroundImage: 'images/BuzzHive.png',
-		backgroundColor: '#454346',
-		color: '#D5FF0C',
-		title: 'View Notes',
-		width: 150,
-		height: 50,
-		top: 70,
-		borderRadius: 10
-	});
+var viewNotes = Ti.UI.createButton({
+    // backgroundImage: 'images/BuzzHive.png',
+    backgroundColor: '#454346',
+    color: '#D5FF0C',
+    title: 'View Notes',
+    width: 150,
+    height: 50,
+    top: 70,
+    borderRadius: 10
+});
 mainNav.add(viewNotes);
 
 var edit = Ti.UI.createButton({
@@ -125,24 +127,25 @@ var footer = Ti.UI.createView({
 	height: '10%',
 	top: '85%'
 });
-	var homeIcon = Ti.UI.createButton({
-		backgroundImage: 'images/home.png',
-		left: 10
-	});
+
+var homeIcon = Ti.UI.createButton({
+    backgroundImage: 'images/home.png',
+    left: 10
+});
 footer.add(homeIcon);
 
-	var logOut = Ti.UI.createButton({
-		backgroundColor: '#11000000',
-		width:90,
-		height:50,
-		title: 'log out',
-		font: {
-			fontFamily: 'Geometry-soft',
-			fontSize: 14
-		},
-		color:'#D5FF0C',
-		left: 40
-	});
+var logOut = Ti.UI.createButton({
+    backgroundColor: '#11000000',
+    width:90,
+    height:50,
+    title: 'log out',
+    font: {
+        fontFamily: 'Geometry-soft',
+        fontSize: 14
+    },
+    color:'#D5FF0C',
+    left: 40
+});
 footer.add(logOut);
 
 
