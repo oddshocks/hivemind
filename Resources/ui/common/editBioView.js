@@ -21,7 +21,7 @@ var editBio = Ti.UI.createView({
 	backgroundImage: 'images/rebel.png',
 	top: 0,
 	width: '100%',
-	height: '100%'
+	height: 800
 });
 
 var editUser = Ti.UI.createLabel({
@@ -100,18 +100,18 @@ win.add(scrollView);
 * Creating user button event Handling
 */
 createUser.addEventListener('click', function(e){
-	if( userDesc != ''){	
+	if( moreHives.value != ''){	
     		var litedb = Ti.Database.open('hivemind');
-    		  litedb.execute('INSERT INTO users (bio) '+ 'VALUES (?)', userDesc.value);
-			  litedb.execute('Update hives (hiveName) '+ 'VALUES (?)', moreHives.value);
-
-     		  // var query = litedb.execute('SELECT bio FROM users');
-     		  // while(query.isValidRow()){
-     		 	 // var nickId = query.fieldByName('bio');
-     		 	 // Ti.API.info(nickId);
-     		 	 // query.next();
-     		  // }
-    		litedb.close();
+    		// litedb.execute('INSERT INTO users (bio) '+ 'VALUES (?)', userDesc.value);
+		litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?)', moreHives.value);
+		//litedb.execute('Update hives (hiveName) '+ 'VALUES (?)', moreHives.value);
+     	// 	  var query = litedb.execute('SELECT * FROM hives');
+     	// 	  while(query.isValidRow()){
+     	// 	 	 var nickId = query.fieldByName('hiveName');
+     	// 	 	 Ti.API.info(nickId);
+     	// 	 	 query.next();
+     	// 	  }
+    		// litedb.close();
 		// alert( createUserName.value + ' \n has been successfully registered');
 	 }
 	// else{

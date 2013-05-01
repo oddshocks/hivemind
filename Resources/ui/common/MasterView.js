@@ -5,7 +5,6 @@
  */
 
 var win2 = Ti.UI.currentWindow;
-Ti.include('loginView.js');
 
 //creates a wrapper to store all of our views inside
 var masterView = Ti.UI.createView({
@@ -25,11 +24,10 @@ var userBio = Ti.UI.createView({
 //edit userbio
 var editUser = Ti.UI.createButton({
 	title: 'edit Bio',
-	top: 100,
 	color: '#D5FF0C',
 	font: {fontSize: 11},
 	backgroundColor: '#11000000',
-	width: 50,
+	width: 100,
 	height: 40
 }); 
 userBio.add(editUser);
@@ -40,7 +38,7 @@ userBio.add(editUser);
 
 var litedb = Ti.Database.open('hivemind');
 var userQuery = litedb.execute('SELECT * FROM users WHERE nickname = ' + '"' +win2.userName+'"');
-while(userQuery.isValidRow()){
+if(userQuery.isValidRow()){
     var nickId = userQuery.fieldByName('nickname');
     var userDesc = userQuery.fieldByName('bio');
      
@@ -55,7 +53,7 @@ while(userQuery.isValidRow()){
         left: '60%'
 	});
 	userBio.add(userInfo);
-    userQuery.next();
+    //userQuery.next();
 }
 userQuery.close();
 litedb.close();
@@ -76,7 +74,6 @@ var mainNav = Ti.UI.createView({
 });
 
 var takeNotes = Ti.UI.createButton({
-    // backgroundImage: 'images/HarvestHoney.png',
     backgroundColor: '#454346',
     color: '#D5FF0C',
     title: 'Take Notes',
@@ -88,7 +85,6 @@ var takeNotes = Ti.UI.createButton({
 mainNav.add(takeNotes);
 
 var viewNotes = Ti.UI.createButton({
-    // backgroundImage: 'images/BuzzHive.png',
     backgroundColor: '#454346',
     color: '#D5FF0C',
     title: 'View Notes',
@@ -100,7 +96,6 @@ var viewNotes = Ti.UI.createButton({
 mainNav.add(viewNotes);
 
 var edit = Ti.UI.createButton({
-		// backgroundImage: 'images/RoamFree.png',
 		backgroundColor: '#454346',
 		color: '#D5FF0C',
 		title: 'Edit Notes',

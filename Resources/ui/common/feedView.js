@@ -29,10 +29,12 @@ var navigation = Ti.UI.createView({
 	});
 navigation.add(chooseHive);
 	var litedb = Ti.Database.open('hivemind');
-	var userQuery = litedb.execute('SELECT * FROM hives');
-	if(userQuery.isValidRow()){
-    	var firstHive = userQuery.fieldByName('hiveName');
-     
+	var hiveOneQuery = litedb.execute('SELECT * FROM hives LIMIT 1');
+	var hiveTwoQuery = litedb.execute('SELECT * FROM hives WHERE id = 2 LIMIT 1');
+	var hiveThreeQuery = litedb.execute('SELECT * FROM hives WHERE id = 3 LIMIT 1');
+	var hiveFourQuery = litedb.execute('SELECT * FROM hives WHERE id = 4 LIMIT 1');
+	if(hiveOneQuery.isValidRow()){
+    	var firstHive = hiveOneQuery.fieldByName('hiveName');
     	var hive1 = Ti.UI.createButton({
 		title: firstHive,
 		font:{
@@ -45,9 +47,14 @@ navigation.add(chooseHive);
 		height: 50
 	});
 	navigation.add(hive1);
+	}	
+	hiveOneQuery.close();
+	litedb.close();
 
+	if(hiveTwoQuery.isValidRow()){
+	var secondHive = hiveTwoQuery.fieldByName('hiveName');
 	var hive2= Ti.UI.createButton({
-		title: firstHive,
+		title: secondHive,
 		font:{
 			fontFamily: 'Geometry-soft',
 			fontSize: '14'
@@ -58,9 +65,14 @@ navigation.add(chooseHive);
 		height: 50
 	});
 	navigation.add(hive2);
+	}
+	hiveTwoQuery.close();
+	litedb.close();
 
+	if(hiveThreeQuery.isValidRow()){
+	var thirdHive = hiveThreeQuery.fieldByName('hiveName');
 	var hive3 = Ti.UI.createButton({
-		title: firstHive,
+		title: thirdHive,
 		font:{
 			fontFamily: 'Geometry-soft',
 			fontSize: '14'
@@ -71,24 +83,27 @@ navigation.add(chooseHive);
 		height: 50
 	});
 	navigation.add(hive3);
+	}
+	hiveThreeQuery.close();
+	litedb.close();
 
+	if(hiveFourQuery.isValidRow()){
+	var fourthHive = hiveFourQuery.fieldByName('hiveName');
 	var hive4 = Ti.UI.createButton({
-		title: firstHive,
+		title: fourthHive,
 		font:{
 			fontFamily: 'Geometry-soft',
 			fontSize: '14'
 		},
 		left: 265,
 		backgroundImage: 'images/honeycomb.png',
-
 		width: 50,
 		height: 50
 	});
 	navigation.add(hive4);
-    // userQuery.next();
-}
-userQuery.close();
-litedb.close();
+	}
+	hiveFourQuery.close();
+	litedb.close();
 
 var seperator = Ti.UI.createView({
 	top: '33%',
