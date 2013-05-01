@@ -25,7 +25,6 @@ var userBio = Ti.UI.createView({
 //edit userbio
 var editUser = Ti.UI.createButton({
 	title: 'edit Bio',
-	left: '15%',
 	top: 100,
 	color: '#D5FF0C',
 	font: {fontSize: 11},
@@ -38,24 +37,15 @@ userBio.add(editUser);
 
 // TODO: What is this for? Can we get rid of it?
 
-// var nickName = Ti.UI.createLabel({
-    // text: username.value,
-    // textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-    // color: '#FFF',
-    // width:200,
-    // height:18,
-    // top: '5%',
-// });
-// userBio.add(nickName);
 
 var litedb = Ti.Database.open('hivemind');
-var userQuery = litedb.execute('SELECT * FROM users WHERE nickname = ' + '"t"');
+var userQuery = litedb.execute('SELECT * FROM users WHERE nickname = ' + '"' +win2.userName+'"');
 while(userQuery.isValidRow()){
-    var nickId = userQuery.fieldByName('bio');
-    // var userDesc = userQuery.field(0);
+    var nickId = userQuery.fieldByName('nickname');
+    var userDesc = userQuery.fieldByName('bio');
      
     var userInfo = Ti.UI.createLabel({
-        html: '<p>'+nickId+'</p>',
+        html: '<p>'+win2.userName+'</p>',
         textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {fontSize: 11},
         color: '#FFF',

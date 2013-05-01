@@ -28,8 +28,13 @@ var navigation = Ti.UI.createView({
 		top: 0
 	});
 navigation.add(chooseHive);
-	var hive1 = Ti.UI.createButton({
-		title: 'Hive 1',
+	var litedb = Ti.Database.open('hivemind');
+	var userQuery = litedb.execute('SELECT * FROM hives');
+	if(userQuery.isValidRow()){
+    	var firstHive = userQuery.fieldByName('hiveName');
+     
+    	var hive1 = Ti.UI.createButton({
+		title: firstHive,
 		font:{
 			fontFamily: 'Geometry-soft',
 			fontSize: '14'
@@ -39,10 +44,10 @@ navigation.add(chooseHive);
 		width: 50,
 		height: 50
 	});
-navigation.add(hive1);
+	navigation.add(hive1);
 
 	var hive2= Ti.UI.createButton({
-		title: 'Hive 2',
+		title: firstHive,
 		font:{
 			fontFamily: 'Geometry-soft',
 			fontSize: '14'
@@ -52,9 +57,10 @@ navigation.add(hive1);
 		width: 50,
 		height: 50
 	});
-navigation.add(hive2);
+	navigation.add(hive2);
+
 	var hive3 = Ti.UI.createButton({
-		title: 'Hive 3',
+		title: firstHive,
 		font:{
 			fontFamily: 'Geometry-soft',
 			fontSize: '14'
@@ -64,9 +70,10 @@ navigation.add(hive2);
 		width: 50,
 		height: 50
 	});
-navigation.add(hive3);
+	navigation.add(hive3);
+
 	var hive4 = Ti.UI.createButton({
-		title: 'Hive 4',
+		title: firstHive,
 		font:{
 			fontFamily: 'Geometry-soft',
 			fontSize: '14'
@@ -77,7 +84,11 @@ navigation.add(hive3);
 		width: 50,
 		height: 50
 	});
-navigation.add(hive4);
+	navigation.add(hive4);
+    // userQuery.next();
+}
+userQuery.close();
+litedb.close();
 
 var seperator = Ti.UI.createView({
 	top: '33%',
@@ -198,6 +209,7 @@ saveButton.addEventListener('click', function(e){
     // If I can help with this part, let me know, unless
     // Marc has it covered. I assume this is where
     // we'll call his PHP script?
+
 	alert('Your notes have been saved');
 });
 

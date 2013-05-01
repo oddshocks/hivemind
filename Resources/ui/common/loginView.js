@@ -3,6 +3,7 @@
  * The view used to log into the app.
  */
 
+Ti.include('MasterView.js');
 var win = Ti.UI.currentWindow;
 
 // Hivemind logo
@@ -85,6 +86,8 @@ loginView.add(signUpButton);
 //Adds loginView to current window
 win.add(loginView);
 	
+
+var userNickName = username.value;
 /*
 * Login event Handling
 */
@@ -99,7 +102,7 @@ loginButton.addEventListener('click', function(e){
 			var homeView = Ti.UI.createWindow({
 				url: "MasterView.js"
 			});
-			homeView.passedName = username.value;
+			homeView.userName = userNickName;
 			homeView.open();
 		}
 		else{
