@@ -2,8 +2,6 @@
  * Login view
  * The view used to log into the app.
  */
-
-Ti.include('MasterView.js');
 var win = Ti.UI.currentWindow;
 
 // Hivemind logo

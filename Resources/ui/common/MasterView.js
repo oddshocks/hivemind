@@ -26,9 +26,10 @@ var editUser = Ti.UI.createButton({
 	title: 'edit Bio',
 	color: '#D5FF0C',
 	font: {fontSize: 11},
-	backgroundColor: '#11000000',
+	backgroundColor: '#00000000',
 	width: 100,
-	height: 40
+	top: 60,
+	left: 20
 }); 
 userBio.add(editUser);
 
@@ -37,25 +38,45 @@ userBio.add(editUser);
 
 
 var litedb = Ti.Database.open('hivemind');
-var userQuery = litedb.execute('SELECT * FROM users WHERE nickname = ' + '"' +win2.userName+'"');
+var userQuery = litedb.execute('SELECT * FROM users WHERE id=1 LIMIT 1');
 if(userQuery.isValidRow()){
     var nickId = userQuery.fieldByName('nickname');
     var userDesc = userQuery.fieldByName('bio');
+
+    var userNick = Ti.UI.createLabel({
+    	html:'<p><b>'+nickId+'</b></p>',
+    	textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    	color: '#FFF',
+    	font:{
+    		fontFamily: 'Geometry-soft',
+    		fontSize: 24},
+    	width: 200,
+    	height: 100,
+    	left: '40%'
+    });
+    userBio.add(userNick);
      
     var userInfo = Ti.UI.createLabel({
-        html: '<p>'+win2.userName+'</p>',
+        html: '<p><i>'+userDesc+'</i></p>',
         textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
         font: {fontSize: 11},
         color: '#FFF',
         width:200,
-        height: 200,
-        top: '5%',
-        left: '60%'
+        height: 100,
+        top: '30%',
+        left: '40%'
 	});
 	userBio.add(userInfo);
-    //userQuery.next();
 }
 userQuery.close();
+
+	 var squery = litedb.execute('SELECT * FROM users where id = 1');
+     		 while(squery.isValidRow()){
+     		 	var nickId = squery.fieldByName('bio');
+     		 	Ti.API.info(nickId);
+     		 	squery.next();
+     		 }
+     		 squery.close();
 litedb.close();
 
 var userImage = Ti.UI.createImageView({

@@ -6,22 +6,6 @@
 
 var win = Ti.UI.currentWindow;
 
-// var xhr = Titanium.Network.createHTTPClient();
-// xhr.onload = function(){
-//     var json = JSON.parse(this.responseText);
-//     if (!json) { 
-//         Titanium.API.info('Error - Null return!'); 
-//         return;
-//     }
-//     var json = json.cats;
-//     var pos;
-//     for( pos=0; pos < jsoncats.length; pos++){
-//         Ti.UI.info(json[pos].cat_name, json[pos].colour_name);
-//     }
-// };
-// xhr.open('GET', <'http://marcbrigham.com/hivemind.php'>);
-// xhr.send();
-
 var header = Ti.UI.createView({
 	width: '100%',
 	height: '33%',

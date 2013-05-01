@@ -46,7 +46,7 @@ var userDesc = Titanium.UI.createTextArea({
 	width:250,
 	height:125,
 	font:{fontSize: 12},
-	hintText:'Add/Edit user Decription',
+	hintText:'Add user Decription',
 	keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
 	returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
 	borderRadius: 10
@@ -100,22 +100,17 @@ win.add(scrollView);
 * Creating user button event Handling
 */
 createUser.addEventListener('click', function(e){
-	if( moreHives.value != ''){	
+	// if( moreHives.value != ''){
+		var userValue = 1;
     		var litedb = Ti.Database.open('hivemind');
+    		litedb.execute('UPDATE users SET bio = ? WHERE id = ?', userDesc.value, userValue);
     		// litedb.execute('INSERT INTO users (bio) '+ 'VALUES (?)', userDesc.value);
+    		return litedb.rowsAffected;
 		litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?)', moreHives.value);
-		//litedb.execute('Update hives (hiveName) '+ 'VALUES (?)', moreHives.value);
-     	// 	  var query = litedb.execute('SELECT * FROM hives');
-     	// 	  while(query.isValidRow()){
-     	// 	 	 var nickId = query.fieldByName('hiveName');
-     	// 	 	 Ti.API.info(nickId);
-     	// 	 	 query.next();
-     	// 	  }
-    		// litedb.close();
-		// alert( createUserName.value + ' \n has been successfully registered');
-	 }
+    		litedb.close();
+	//  }
 	// else{
-		// alert('Please fill in all missing fields');
+	// 	alert('You are trying to add null hives, that does not work');
 	// }
 });
 
