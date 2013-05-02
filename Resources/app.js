@@ -26,6 +26,8 @@ else{
         + 'user_id TEXT, hive_id TEXT, FOREIGN KEY(user_id) '
         + 'REFERENCES users(id), FOREIGN KEY(hive_id) '
         + 'REFERENCES hives(id));');
+        litedb.execute('CREATE TABLE IF NOT EXISTS notes(id INTEGER PRIMARY KEY '
+        + 'AUTOINCREMENT,title TEXT, content TEXT);');
     litedb.close();
 
 	var login = Ti.UI.createWindow({
