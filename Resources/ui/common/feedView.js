@@ -228,11 +228,11 @@ saveButton.addEventListener('click', function(e){
     // we'll call his PHP script?
 
 
-var takeNotes = takeNotes.value;
-var notesTitle = notesTitle.value;
+// var takeNotes = takeNotes.value;
+// var notesTitle = notesTitle.value;
 
 //compose & pass the variables to the url where the php & mysql code is at
-var passurl = "http://marcbrigham.com/hivemind.php?action="+takeNotes+'&action1='+notesTitle;
+var passurl = "http://marcbrigham.com/hivemind.php?action="+takeNotes.value+'&action1='+notesTitle.value;
 
 //i leave this on, so i can see in the debugger, if the values are on the url
 Titanium.API.info(passurl);

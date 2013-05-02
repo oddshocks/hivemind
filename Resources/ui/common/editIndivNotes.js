@@ -156,7 +156,6 @@ deleteButton.addEventListener('click', function(ev){
     	}
     	alertWindow.show();
 });
-
 backIcon.addEventListener('click', function(e){
 	win.close();
 });
