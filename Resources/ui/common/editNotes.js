@@ -168,11 +168,18 @@ content.add(takeNotesLabel);
     				title: 'Oracle DB connectivity'
 			});
 		notes.appendRow(row1);
-			var row2 = Titanium.UI.createTableViewRow({
+
+		var litedb = Ti.Database.open('hivemind');
+		var query = litedb.execute('SELECT * FROM notes WHERE id=1 LIMIT 1');
+     		if(query.isValidRow()){
+     		 	var titleOne = query.fieldByName('title');
+     		 	var row2 = Titanium.UI.createTableViewRow({
     				// title: json[pos].title[2]
-    				title: 'Design patterns'
+    				title: titleOne
 			});
 		notes.appendRow(row2);
+     		 }
+     		 litedb.close();
 			var row3 = Titanium.UI.createTableViewRow({
     				// title: json[pos].title[3]
     				title: 'PHP ado connectivy'
@@ -216,6 +223,13 @@ homeIcon.addEventListener('click', function(e){
 });
 
 row1.addEventListener('click', function(e){
+	var noteView = Ti.UI.createWindow({
+		url: "editIndivNotes.js"
+	});
+	noteView.open();
+});
+
+row2.addEventListener('click', function(e){
 	var noteView = Ti.UI.createWindow({
 		url: "editIndivNotes.js"
 	});

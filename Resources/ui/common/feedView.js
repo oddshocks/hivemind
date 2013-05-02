@@ -34,6 +34,7 @@ navigation.add(chooseHive);
 	var hiveTwoQuery = litedb.execute('SELECT * FROM hives WHERE id = 2 LIMIT 1');
 	var hiveThreeQuery = litedb.execute('SELECT * FROM hives WHERE id = 3 LIMIT 1');
 	var hiveFourQuery = litedb.execute('SELECT * FROM hives WHERE id = 4 LIMIT 1');
+
 	if(hiveOneQuery.isValidRow()){
     	var firstHive = hiveOneQuery.fieldByName('hiveName');
     	var hive1 = Ti.UI.createButton({
@@ -234,17 +235,21 @@ if (notesTitle.value == '' || takeNotes.value == '')
     else
     {
         //-- Disable fields and buttons before making our HTTP request
-        notesTitle.enabled    = false;
-        takeNotes.enabled = false;
+        // notesTitle.enabled = false;
+        // takeNotes.enabled = false;
         //-- Change this URL to where ever yours exists
-        saveReq.open('POST','http://marcbrigham.com/hivemind.php');
-        var params = {
-            title: notesTitle.value,
-            note: takeNotes.value
-        };
-        saveReq.send(params);
-    }    
+        // saveReq.open('POST','http://marcbrigham.com/hivemind.php');
+        // var params = {
+        //     title: notesTitle.value,
+        //     note: takeNotes.value
+        // };
+        // saveReq.send(params);
 
+         var litedb = Ti.Database.open('hivemind');
+        		litedb.execute('INSERT INTO notes (title, content) '+ 'VALUES (?,?)', notesTitle.value, takeNotes.value);
+    		return litedb.rowsAffected;
+    		litedb.close();
+    }
 	alert('Your notes have been saved');
 });
 
