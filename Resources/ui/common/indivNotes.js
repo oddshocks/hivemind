@@ -2,26 +2,6 @@
  * Indiv notes
  * This is the view used for looking at an individual note.
  */
-
-// var xhr = Titanium.Network.createHTTPClient();
-// xhr.onload = function(){
-//     var json = JSON.parse(this.responseText);
-//     if (!json) { 
-//         Titanium.API.info('Error - Null return!'); 
-//         return;
-//     }
-//     var json = json.cats;
-//     var pos;
-//     for( pos=0; pos < jsoncats.length; pos++){
-//     	var noteTitle =  json[pos].title;
-//     	var noteContent = json[pos].content;
-//         // Ti.UI.info(json[pos].title, json[pos].content);
-//     }
-// };
-// xhr.open('GET', <'http://marcbrigham.com/hivemind.php'>);
-// xhr.send();
-
-
 var win = Ti.UI.currentWindow;
 
 var content = Ti.UI.createView({

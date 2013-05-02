@@ -104,7 +104,6 @@ createUser.addEventListener('click', function(e){
 		var userValue = 1;
     		var litedb = Ti.Database.open('hivemind');
     		litedb.execute('UPDATE users SET bio = ? WHERE id = ?', userDesc.value, userValue);
-    		// litedb.execute('INSERT INTO users (bio) '+ 'VALUES (?)', userDesc.value);
     		return litedb.rowsAffected;
 		litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?)', moreHives.value);
     		litedb.close();
