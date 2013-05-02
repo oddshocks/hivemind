@@ -225,6 +225,25 @@ saveButton.addEventListener('click', function(e){
     // Marc has it covered. I assume this is where
     // we'll call his PHP script?
 
+
+if (notesTitle.value == '' || takeNotes.value == '')
+    {
+        alert('All fields are required');
+    }
+    else
+    {
+        //-- Disable fields and buttons before making our HTTP request
+        notesTitle.enabled    = false;
+        takeNotes.enabled = false;
+        //-- Change this URL to where ever yours exists
+        saveReq.open('POST','http://marcbrigham.com/hivemind.php');
+        var params = {
+            title: notesTitle.value,
+            note: takeNotes.value
+        };
+        saveReq.send(params);
+    }    
+
 	alert('Your notes have been saved');
 });
 
