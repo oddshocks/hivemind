@@ -4,6 +4,7 @@
  */
 
 var win = Ti.UI.currentWindow;
+var saveReq = Titanium.Network.createHTTPClient();
 
 var header = Ti.UI.createView({
 	width: '100%',
