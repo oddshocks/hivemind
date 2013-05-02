@@ -39,6 +39,27 @@ var editUser = Ti.UI.createLabel({
 });
 editBio.add(editUser);
 
+var litedb = Ti.Database.open('hivemind');
+var query = litedb.execute('SELECT * FROM users ORDER BY id DESC LIMIT 1');
+     	if(query.isValidRow()){
+     		var newUserName = query.fieldByName('nickname');
+
+     		var editUserName = Titanium.UI.createTextField({
+			color:'#000',
+			backgroundColor: '#EEE',
+			top:80,
+			width:'80%',
+			font:{fontSize: 12},
+			value: newUserName,
+			keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
+			returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+			borderRadius: 10
+		});
+		editBio.add(editUserName);
+
+     	}
+    	litedb.close();
+
 var userDesc = Titanium.UI.createTextArea({
 	color:'#000',
 	backgroundColor: '#EEE',
@@ -100,17 +121,17 @@ win.add(scrollView);
 * Creating user button event Handling
 */
 createUser.addEventListener('click', function(e){
-	// if( moreHives.value != ''){
 		var userValue = 1;
     		var litedb = Ti.Database.open('hivemind');
+
+    		litedb.execute('INSERT INTO users (bio) '+ 'VALUES (?)', userDesc.value);
     		litedb.execute('UPDATE users SET bio = ? WHERE id = ?', userDesc.value, userValue);
     		return litedb.rowsAffected;
 		litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?)', moreHives.value);
     		litedb.close();
-	//  }
-	// else{
-	// 	alert('You are trying to add null hives, that does not work');
-	// }
+		
+		alert('You are trying to add null hives, that does not work');
+
 });
 
 /*

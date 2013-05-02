@@ -173,11 +173,11 @@ var footer = Ti.UI.createView({
 	});
 footer.add(backIcon);
 
-	var homeIcon = Ti.UI.createButton({
-		backgroundImage: 'images/home.png',
-		left: 40
-	});
-footer.add(homeIcon);
+// 	var homeIcon = Ti.UI.createButton({
+// 		backgroundImage: 'images/home.png',
+// 		left: 40
+// 	});
+// footer.add(homeIcon);
 
 	var saveButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
@@ -257,9 +257,9 @@ if (notesTitle.value == '' || takeNotes.value == '')
 // TODO: Make this go home? Or does it already? This code
 // does the same thing as the "back" event listener below
 // it.
-homeIcon.addEventListener('click', function(e){
-	win.close();
-});
+// homeIcon.addEventListener('click', function(e){
+// 	win.close();
+// });
 backIcon.addEventListener('click', function(e){
 	win.close();
 });

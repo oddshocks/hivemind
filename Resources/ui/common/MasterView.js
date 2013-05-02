@@ -38,7 +38,7 @@ userBio.add(editUser);
 
 
 var litedb = Ti.Database.open('hivemind');
-var userQuery = litedb.execute('SELECT * FROM users WHERE id=1 LIMIT 1');
+var userQuery = litedb.execute('SELECT * FROM users ORDER BY id DESC LIMIT 1');
 if(userQuery.isValidRow()){
     var nickId = userQuery.fieldByName('nickname');
     var userDesc = userQuery.fieldByName('bio');
@@ -80,11 +80,10 @@ userQuery.close();
 litedb.close();
 
 var userImage = Ti.UI.createImageView({
-    image: 'images/normal.jpg',
+    image: 'images/honeycomb.png',
     width: 50,
     height: 50,
     left: '15%',
-    borderRadius: 5,
     top: '5%'
 });
 userBio.add(userImage);

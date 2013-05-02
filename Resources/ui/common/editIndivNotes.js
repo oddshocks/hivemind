@@ -105,6 +105,20 @@ footer.add(saveButton);
 	});
 footer.add(clearButton);
 
+var deleteButton  = Titanium.UI.createButton({
+		backgroundColor: '#11000000',
+		left: 275,
+		width:50,
+		height:50,
+		title: 'save',
+		font: {
+			fontFamily: 'Geometry-soft',
+			fontSize: 14
+		},
+		color:'#D5FF0C'
+	});
+footer.add(deleteButton);
+
 win.add(content);
 win.add(footer);
 
@@ -126,6 +140,16 @@ saveButton.addEventListener('click', function(e){
 	litedb.execute('UPDATE notes SET title = ?, content = ? WHERE id = ?', notesTitle.value, takeNotes.value, idValue);
 	alert('Your notes have been saved');
 	litedb.close();
+});
+
+deleteButton
+.addEventListener('click', function(e){
+	var alertWindow = Titanium.UI.createAlertDialog({
+    			message: 'Are you sure you want to delete?',
+    			cancel: 1,
+    			buttonNames: ['OK','Cancel']
+		});
+	litedb.execute('UPDATE notes SET title = ?, content = ? WHERE id = ?', notesTitle.value, takeNotes.value, idValue);
 });
 
 

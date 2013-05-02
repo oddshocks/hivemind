@@ -133,7 +133,19 @@ createUser.addEventListener('click', function(e){
      		 	// query.next();
      		 // }
     		litedb.close();
-		alert( createUserName.value + ' \n has been successfully registered');
+    		var alertWindow = Titanium.UI.createAlertDialog({
+    			title: 'Titanium',
+    			message: createUserName.value + ' \n has been successfully registered',
+    			buttonNames: ['OK']
+		});
+ 
+		alertWindow.addEventListener('click',function(ev){
+			var homeView = Ti.UI.createWindow({
+				url: "MasterView.js"
+			});
+			homeView.open();
+		});
+ 		alertWindow.show();
 	}
 	else{
 		alert('Please fill in all missing fields');
