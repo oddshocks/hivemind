@@ -228,29 +228,27 @@ saveButton.addEventListener('click', function(e){
     // we'll call his PHP script?
 
 
-if (notesTitle.value == '' || takeNotes.value == '')
-    {
-        alert('All fields are required');
-    }
-    else
-    {
-        //-- Disable fields and buttons before making our HTTP request
-        // notesTitle.enabled = false;
-        // takeNotes.enabled = false;
-        //-- Change this URL to where ever yours exists
-        // saveReq.open('POST','http://marcbrigham.com/hivemind.php');
-        // var params = {
-        //     title: notesTitle.value,
-        //     note: takeNotes.value
-        // };
-        // saveReq.send(params);
+var takeNotes = takeNotes.value;
+var notesTitle = notesTitle.value;
 
-         var litedb = Ti.Database.open('hivemind');
-        		litedb.execute('INSERT INTO notes (title, content) '+ 'VALUES (?,?)', notesTitle.value, takeNotes.value);
-    		return litedb.rowsAffected;
-    		litedb.close();
-    }
-	alert('Your notes have been saved');
+//compose & pass the variables to the url where the php & mysql code is at
+var passurl = "http://marcbrigham.com/hivemind.php?action="+takeNotes+'&action1='+notesTitle;
+
+//i leave this on, so i can see in the debugger, if the values are on the url
+Titanium.API.info(passurl);
+
+var xhr = Titanium.Network.createHTTPClient();
+xhr.open('GET', passurl);
+xhr.send();
+
+//display a message saying it workd
+var alertDialog = Ti.UI.createAlertDialog({
+title: "Alert",
+message: "It Worked!",
+buttonNames: ['OK'],
+cancel:0
+});
+alertDialog.show();
 });
 
 
