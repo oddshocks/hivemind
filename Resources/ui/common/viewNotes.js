@@ -158,17 +158,12 @@ var footer = Ti.UI.createView({
 	height: '10%',
 	top: '85%'
 });
-	var backIcon = Ti.UI.createButton({
-		backgroundImage: 'images/back.png',
-		left: 10
-	});
-footer.add(backIcon);
 
-	var homeIcon = Ti.UI.createButton({
-		backgroundImage: 'images/home.png',
-		left: 40
-	});
-footer.add(homeIcon);
+var backIcon = Ti.UI.createButton({
+	backgroundImage: 'images/back.png',
+	left: 10
+});
+footer.add(backIcon);
 
 header.add(navigation);
 win.add(header);
@@ -182,9 +177,6 @@ win.add(footer);
 // TODO: Again, do these two need to do different things?
 // If not, delete these comments and ignore me. :P
 backIcon.addEventListener('click', function(e){
-	win.close();
-});
-homeIcon.addEventListener('click', function(e){
 	win.close();
 });
 

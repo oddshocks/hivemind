@@ -200,12 +200,6 @@ var footer = Ti.UI.createView({
 	});
 footer.add(backIcon);
 
-	var homeIcon = Ti.UI.createButton({
-		backgroundImage: 'images/home.png',
-		left: 40
-	});
-footer.add(homeIcon);
-
 header.add(navigation);
 win.add(header);
 win.add(content);
@@ -216,9 +210,6 @@ win.add(footer);
 * Event Handling
 */
 backIcon.addEventListener('click', function(e){
-	win.close();
-});
-homeIcon.addEventListener('click', function(e){
 	win.close();
 });
 

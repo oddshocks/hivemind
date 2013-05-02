@@ -78,10 +78,24 @@ var email = Titanium.UI.createTextField({
 });
 signUp.add(email);
 
-var hives = Titanium.UI.createTextArea({
+var userDescription = Titanium.UI.createTextArea({
 	color:'#000',
 	backgroundColor: '#EEE',
 	top:230,
+	width:250,
+	height:125,
+	font:{fontSize: 12},
+	hintText:'Type in user description',
+	keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
+	returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
+	borderRadius: 10
+});
+signUp.add(userDescription);
+
+var hives = Titanium.UI.createTextArea({
+	color:'#000',
+	backgroundColor: '#EEE',
+	top:380,
 	width:250,
 	height:125,
 	font:{fontSize: 12},
@@ -95,7 +109,7 @@ signUp.add(hives);
 var createUser  = Titanium.UI.createButton({
 	backgroundImage: 'images/join.png',
 	left: 70,
-	top:375,
+	top: 520,
 	width:50,
 	height:50,
 	borderRadius:5
@@ -104,7 +118,7 @@ signUp.add(createUser);
 
 var cancelButton  = Titanium.UI.createButton({
 	backgroundImage: 'images/cancel.png',
-	top:375,
+	top:520,
 	left: 170,
 	width:50,
 	height:50,
@@ -123,7 +137,7 @@ createUser.addEventListener('click', function(e){
 	if(createUserName != ' ' && password != ' ' && email != ' '){
 		var hashed_pass = Titanium.Utils.md5HexDigest(password.value);
     		var litedb = Ti.Database.open('hivemind');
-    		litedb.execute('INSERT INTO users (nickname, email, password) '+ 'VALUES (?,?,?)', createUserName.value, email.value, hashed_pass);
+    		litedb.execute('INSERT INTO users (nickname, email, password, bio) '+ 'VALUES (?,?,?,?)', createUserName.value, email.value, hashed_pass, userDescription.value);
 		litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?)', hives.value);
 
      		 // var query = litedb.execute('SELECT * FROM users_hives');

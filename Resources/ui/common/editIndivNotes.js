@@ -71,12 +71,6 @@ var footer = Ti.UI.createView({
 	});
 footer.add(backIcon);
 
-	var homeIcon = Ti.UI.createButton({
-		backgroundImage: 'images/home.png',
-		left: 40
-	});
-footer.add(homeIcon);
-
 	var saveButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
 		left: 175,
@@ -110,7 +104,7 @@ var deleteButton  = Titanium.UI.createButton({
 		left: 275,
 		width:50,
 		height:50,
-		title: 'save',
+		title: 'delete',
 		font: {
 			fontFamily: 'Geometry-soft',
 			fontSize: 14
@@ -125,6 +119,8 @@ win.add(footer);
 /*
 * Event Handling
 */
+var idValue = 1;
+
 clearButton.addEventListener('click', function(e){
 	takeNotes.value = ' ';
 });
@@ -135,30 +131,32 @@ saveButton.addEventListener('click', function(e){
     // If I can help with this part, let me know, unless
     // Marc has it covered. I assume this is where
     // we'll call his PHP script?
-	var idValue = 1;
 	var litedb = Ti.Database.open('hivemind');
 	litedb.execute('UPDATE notes SET title = ?, content = ? WHERE id = ?', notesTitle.value, takeNotes.value, idValue);
 	alert('Your notes have been saved');
 	litedb.close();
 });
 
-deleteButton
-.addEventListener('click', function(e){
+deleteButton.addEventListener('click', function(ev){
 	var alertWindow = Titanium.UI.createAlertDialog({
     			message: 'Are you sure you want to delete?',
     			cancel: 1,
-    			buttonNames: ['OK','Cancel']
+    			buttonNames: ['Confirm','Cancel']
 		});
-	litedb.execute('UPDATE notes SET title = ?, content = ? WHERE id = ?', notesTitle.value, takeNotes.value, idValue);
+	switch(ev.index){
+    	case 0:
+      		var litedb = Ti.Database.open('hivemind');
+		litedb.execute('DELETE * FROM notes WHERE id = ?', idValue);
+		alert('Your note has been deleted');
+		litedb.close();
+      	break;
+    	case 1:
+      		
+      	break;
+    	}
+    	alertWindow.show();
 });
 
-
-// TODO: Make this go home? Or does it already? This code
-// does the same thing as the "back" event listener below
-// it.
-homeIcon.addEventListener('click', function(e){
-	win.close();
-});
 backIcon.addEventListener('click', function(e){
 	win.close();
 });
