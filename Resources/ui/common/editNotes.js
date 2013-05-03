@@ -163,28 +163,37 @@ content.add(takeNotesLabel);
 			top: 25,
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 		});
-			var row1 = Titanium.UI.createTableViewRow({
-    				// title: json[pos].title[1]
-    				title: 'Oracle DB connectivity'
-			});
-		notes.appendRow(row1);
 
 		var litedb = Ti.Database.open('hivemind');
-		var query = litedb.execute('SELECT * FROM notes WHERE id=1 LIMIT 1');
-     		if(query.isValidRow()){
-     		 	var titleOne = query.fieldByName('title');
-     		 	var row2 = Titanium.UI.createTableViewRow({
-    				// title: json[pos].title[2]
+		var queryOne = litedb.execute('SELECT * FROM notes WHERE id=1 LIMIT 1');
+		// var queryTwo = litedb.execute('SELECT * FROM notes WHERE id=2 LIMIT 1');
+		// var queryThree = litedb.execute('SELECT * FROM notes WHERE id=3 LIMIT 1');
+
+		if(queryOne.isValidRow()){
+     		 	var titleOne = queryOne.fieldByName('title');
+			var row1 = Titanium.UI.createTableViewRow({
     				title: titleOne
 			});
+		notes.appendRow(row1);
+		}
+
+     		// if(queryTwo.isValidRow()){
+     		//  	var titleTwo = queryTwo.fieldByName('title');
+     		 	var row2 = Titanium.UI.createTableViewRow({
+    				// title: json[pos].title[2]
+    				title: 'tools'
+			});
 		notes.appendRow(row2);
-     		 }
-     		 litedb.close();
+     		 // }
+     		 
+     		 // if(queryThree.isValidRow()){
+     		 // 	var titleThree = queryThree.fieldByName('title');
 			var row3 = Titanium.UI.createTableViewRow({
-    				// title: json[pos].title[3]
-    				title: 'PHP ado connectivy'
+    				title: 'C++'
 			});
 		notes.appendRow(row3);
+		// }
+		litedb.close();
 
 content.add(notes);
 

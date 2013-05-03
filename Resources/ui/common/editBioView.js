@@ -124,13 +124,19 @@ createUser.addEventListener('click', function(e){
 		var userValue = 1;
     		var litedb = Ti.Database.open('hivemind');
 
-    		litedb.execute('INSERT INTO users (nick, bio) '+ 'VALUES (?)', userDesc.value);
+    		litedb.execute('INSERT INTO users (nickname, bio) '+ 'VALUES (?, ?)', editUserName.value, userDesc.value);
     		litedb.execute('UPDATE users SET bio = ? WHERE id = ?', userDesc.value, userValue);
     		return litedb.rowsAffected;
 		litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?)', moreHives.value);
     		litedb.close();
 		
-		alert('You are trying to add null hives, that does not work');
+		alertWindow.addEventListener('click',function(ev){
+			var homeView = Ti.UI.createWindow({
+				url: "MasterView.js"
+			});
+			homeView.open();
+		});
+ 		alertWindow.show();
 
 });
 

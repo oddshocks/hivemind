@@ -173,12 +173,6 @@ var footer = Ti.UI.createView({
 	});
 footer.add(backIcon);
 
-// 	var homeIcon = Ti.UI.createButton({
-// 		backgroundImage: 'images/home.png',
-// 		left: 40
-// 	});
-// footer.add(homeIcon);
-
 	var saveButton  = Titanium.UI.createButton({
 		backgroundColor: '#11000000',
 		left: 175,
@@ -221,6 +215,13 @@ clearButton.addEventListener('click', function(e){
 });
 
 saveButton.addEventListener('click', function(e){
+
+	var litedb = Ti.Database.open('hivemind');
+    	litedb.execute('INSERT INTO notes (title, content) '+ 'VALUES (?, ?)', notesTitle.value, takeNotes.value);
+    	litedb.close();
+
+    	alert( notesTitle.value+'has been saved');
+});
     // TODO: Interact with the MySQL database here to
     // add a note. Not sure how we're implementing that.
     // If I can help with this part, let me know, unless
@@ -232,24 +233,24 @@ saveButton.addEventListener('click', function(e){
 // var notesTitle = notesTitle.value;
 
 //compose & pass the variables to the url where the php & mysql code is at
-var passurl = "http://marcbrigham.com/hivemind.php?action="+takeNotes.value+'&action1='+notesTitle.value;
+// var passurl = "http://marcbrigham.com/hivemind.php?action="+takeNotes.value+'&action1='+notesTitle.value;
 
-//i leave this on, so i can see in the debugger, if the values are on the url
-Titanium.API.info(passurl);
+// //i leave this on, so i can see in the debugger, if the values are on the url
+// Titanium.API.info(passurl);
 
-var xhr = Titanium.Network.createHTTPClient();
-xhr.open('GET', passurl);
-xhr.send();
+// var xhr = Titanium.Network.createHTTPClient();
+// xhr.open('GET', passurl);
+// xhr.send();
 
 //display a message saying it workd
-var alertDialog = Ti.UI.createAlertDialog({
-title: "Alert",
-message: "It Worked!",
-buttonNames: ['OK'],
-cancel:0
-});
-alertDialog.show();
-});
+// var alertDialog = Ti.UI.createAlertDialog({
+// title: "Alert",
+// message: "It Worked!",
+// buttonNames: ['OK'],
+// cancel:0
+// });
+// alertDialog.show();
+// });
 
 
 // TODO: Make this go home? Or does it already? This code
@@ -257,7 +258,6 @@ alertDialog.show();
 // it.
 // homeIcon.addEventListener('click', function(e){
 // 	win.close();
-// });
 backIcon.addEventListener('click', function(e){
 	win.close();
 });

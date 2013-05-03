@@ -32,6 +32,10 @@ else{
         + 'AUTOINCREMENT,tag_id INTEGER);');
         litedb.execute('CREATE TABLE IF NOT EXISTS tags(id INTEGER PRIMARY KEY '
         + 'AUTOINCREMENT,title TEXT);');
+        // litedb.execute("DROP TABLE IF EXISTS users");
+        // litedb.execute("DROP TABLE IF EXISTS hives");
+        // litedb.execute("DROP TABLE IF EXISTS notes");
+
     litedb.close();
 
 	var login = Ti.UI.createWindow({

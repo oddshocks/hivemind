@@ -31,7 +31,7 @@ var navigation = Ti.UI.createView({
 navigation.add(chooseHive);
 	var litedb = Ti.Database.open('hivemind');
 	var hiveOneQuery = litedb.execute('SELECT * FROM hives LIMIT 1');
-	var hiveTwoQuery = litedb.execute('SELECT * FROM hives WHERE id = 2 LIMIT 1');
+	var hiveTwoQuery = litedb.execute('SELECT * FROM hives ORDER BY id DESC LIMIT 1');
 	var hiveThreeQuery = litedb.execute('SELECT * FROM hives WHERE id = 3 LIMIT 1');
 	var hiveFourQuery = litedb.execute('SELECT * FROM hives WHERE id = 4 LIMIT 1');
 	if(hiveOneQuery.isValidRow()){
@@ -137,18 +137,36 @@ content.add(takeNotesLabel);
 			top: 25,
 			textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER
 		});
-		var row1 = Titanium.UI.createTableViewRow({
-    			title: 'Oracle connectivity'
-		});
-notes.appendRow(row1);
-		var row2 = Titanium.UI.createTableViewRow({
-    			title: 'Design Patterns for icons'
-		});
-notes.appendRow(row2);
-		var row3 = Titanium.UI.createTableViewRow({
-    			title: 'PHP notes'
-		});
-notes.appendRow(row3);
+		var litedb = Ti.Database.open('hivemind');
+		var queryOne = litedb.execute('SELECT * FROM notes WHERE id=1 LIMIT 1');
+		// var queryTwo = litedb.execute('SELECT * FROM notes WHERE id=2 LIMIT 1');
+		// var queryThree = litedb.execute('SELECT * FROM notes WHERE id=3 LIMIT 1');
+
+		if(queryOne.isValidRow()){
+     		 	var titleOne = queryOne.fieldByName('title');
+			var row1 = Titanium.UI.createTableViewRow({
+    				title: titleOne
+			});
+		notes.appendRow(row1);
+		}
+		
+     		// if(queryTwo.isValidRow()){
+     		 	// var titleTwo = queryTwo.fieldByName('title');
+     		 	var row2 = Titanium.UI.createTableViewRow({
+    				// title: json[pos].title[2]
+    				title: 'C++'
+			});
+		notes.appendRow(row2);
+     		 // }
+     		 
+     		 // if(queryThree.isValidRow()){
+     		 // 	var titleThree = queryThree.fieldByName('title');
+			var row3 = Titanium.UI.createTableViewRow({
+    				title: 'Java'
+			});
+		notes.appendRow(row3);
+		// }
+		litedb.close();
 
 content.add(notes);
 
