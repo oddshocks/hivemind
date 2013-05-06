@@ -99,7 +99,7 @@ var hives = Titanium.UI.createTextArea({
 	width:250,
 	height:125,
 	font:{fontSize: 12},
-	hintText:'Select Hives, separated by comma',
+	hintText:'Add a hive',
 	keyboardType:Titanium.UI.KEYBOARD_DEFAULT,
 	returnKeyType:Titanium.UI.RETURNKEY_DEFAULT,
 	borderRadius: 10

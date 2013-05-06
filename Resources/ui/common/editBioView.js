@@ -92,10 +92,12 @@ var createUser  = Titanium.UI.createButton({
 	title: 'Save',
 	color:'#D5FF0C',
 	backgroundColor: '#11000000',
-	font: {fontSize: 12},
+	font: {
+		fontFamily: 'Geometry-soft',
+		fontSize: 12},
 	left: 70,
 	top:425,
-	width:50,
+	// width:50,
 	height:50
 });
 editBio.add(createUser);
@@ -109,7 +111,9 @@ var cancelButton  = Titanium.UI.createButton({
 	borderRadius:5,
 	color:'#D5FF0C',
 	backgroundColor: '#11000000',
-	font: {fontSize: 12}
+	font: {
+		fontFamily: 'Geometry-soft',
+		fontSize: 12}
 });
 editBio.add(cancelButton);
 
@@ -130,13 +134,12 @@ createUser.addEventListener('click', function(e){
 		litedb.execute('INSERT INTO hives (hiveName) '+ 'VALUES (?)', moreHives.value);
     		litedb.close();
 		
-		alertWindow.addEventListener('click',function(ev){
-			var homeView = Ti.UI.createWindow({
+		alert(editUserName.value+ ' Profile has been updated');
+
+		var homeView = Ti.UI.createWindow({
 				url: "MasterView.js"
 			});
-			homeView.open();
-		});
- 		alertWindow.show();
+		homeView.open();
 
 });
 
@@ -144,5 +147,9 @@ createUser.addEventListener('click', function(e){
 * Cancel event Handling
 */
 cancelButton.addEventListener('click', function(e){
+	var homeView = Ti.UI.createWindow({
+		url: "MasterView.js"
+	});
+	homeView.open();
 	win.close();
 });

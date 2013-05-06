@@ -38,9 +38,9 @@ else{
 
     litedb.close();
 
-	var login = Ti.UI.createWindow({
-		 url: "ui/common/loginView.js"
-		//url: "ui/common/editBioView.js"
+	var intro = Ti.UI.createWindow({
+		 // url: "ui/common/loginView.js"
+		url: "ui/common/howTo.js"
 	});
-	login.open();
+	intro.open();
 }

@@ -81,6 +81,7 @@ litedb.close();
 
 var userImage = Ti.UI.createImageView({
     image: 'images/honeycomb.png',
+    title: 'HV',
     width: 50,
     height: 50,
     left: '15%',
@@ -97,6 +98,9 @@ var takeNotes = Ti.UI.createButton({
     backgroundColor: '#454346',
     color: '#D5FF0C',
     title: 'Take Notes',
+    font:{
+            fontFamily: 'Geometry-soft',
+            fontSize: 24},
     width: 150,
     height: 50,
     top: 10,
@@ -108,6 +112,9 @@ var viewNotes = Ti.UI.createButton({
     backgroundColor: '#454346',
     color: '#D5FF0C',
     title: 'View Notes',
+    font:{
+            fontFamily: 'Geometry-soft',
+            fontSize: 24},
     width: 150,
     height: 50,
     top: 70,
@@ -119,6 +126,9 @@ var edit = Ti.UI.createButton({
 		backgroundColor: '#454346',
 		color: '#D5FF0C',
 		title: 'Edit Notes',
+                      font:{
+                            fontFamily: 'Geometry-soft',
+                            fontSize: 24},
 		width: 150,
 		height: 50,
 		top: 130,
